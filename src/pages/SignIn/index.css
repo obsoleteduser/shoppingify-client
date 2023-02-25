@@ -74,7 +74,7 @@ span{
 
 @media screen and (max-width: 480px) {
 
-    .sign-up-container{
+    .sign-in-container{
         width: 20rem;
         height: 60vh;
     }
