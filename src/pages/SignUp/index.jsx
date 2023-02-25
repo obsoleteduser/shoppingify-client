@@ -15,7 +15,7 @@ export const SignUp = () => {
         <button>Sign Up</button>
         <div className='alternatives'>
         <span>Already have an account?</span>
-        <Link className='login-link' to="/login">Login</Link>
+        <Link className='signin-link' to="/">Login</Link>
         </div>
     </div>
   )
