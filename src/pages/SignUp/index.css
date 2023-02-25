@@ -1,0 +1,78 @@
+.sign-up-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25rem;
+    height: 80vh;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    gap: .5rem;
+    border: unset;
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+}
+
+h2{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+input{
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: unset;
+    border: 1px solid lightgrey;
+}
+
+input::placeholder{
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+button{
+    padding: .8rem; 
+    margin: .6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: unset;
+    border-radius: 10px;
+    color: white;
+    background-color: #F9A109;
+    cursor: pointer;
+}
+
+button:active{
+    background-color:  #FFD580;
+}
+
+span{
+    padding: 1rem;
+    font-weight: 300;
+}
+
+.login-link{
+    text-decoration: none;
+    color: gray;
+    background-color: lightgrey;
+    padding: 1rem;
+    border-radius: 20%;
+}
+
+.alternatives{
+    font-size: .9rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .sign-up-container{
+        width: 20rem;
+        height: 60vh;
+    }
+    
+}
