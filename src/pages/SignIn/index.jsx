@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './index.css'
+import './SignIn.css'
 
 export const SignIn = () => {
   return (
     <div className='sign-in-container'>
-        <h2>Sign In</h2>
+        <h2 className='sign-in-title'>Sign In</h2>
         <label htmlFor="">Email</label>
-        <input type="email" name="" id="" placeholder='Email'/>
+        <input className='sign-in-email' type="email" name="" id="" placeholder='Email'/>
         <label htmlFor="">Password</label>
-        <input type="password" placeholder='Password'/>
-        <button>Sign In</button>
-        <div className='alternatives'>
-        <span>Not registered yet?</span>
-        <Link className='signup-link' to="/signup">Sign Up</Link>
+        <input className='sign-in-password' type="password" placeholder='Password'/>
+        <button className='sign-in-btn'>Sign In</button>
+        <div className='sign-in-alternatives'>
+        <span className='sign-in-span'>Not registered yet?</span>
+        <Link className='sign-in-sign-up-link' to="/signup">Sign Up</Link>
         </div>
     </div>
   )

@@ -18,7 +18,7 @@ h2{
     text-align: center;
 }
 
-input{
+.sign-up-email, .sign-up-password{
     padding: .5rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -26,12 +26,12 @@ input{
     border: 1px solid lightgrey;
 }
 
-input::placeholder{
+.sign-up-email, .sign-up-password::placeholder{
     font-weight: 300;
     font-size: .8rem;
 }
 
-button{
+.sign-up-btn{
     padding: .8rem; 
     margin: .6rem;
     font-size: 1rem;
@@ -43,16 +43,16 @@ button{
     cursor: pointer;
 }
 
-button:active{
+.sign-up-btn:active{
     background-color:  #FFD580;
 }
 
-span{
+.sign-up-span{
     padding: 1rem;
     font-weight: 300;
 }
 
-.signin-link{
+.sign-up-sign-in-link{
     text-decoration: none;
     color: gray;
     background-color: lightgrey;
@@ -60,11 +60,11 @@ span{
     border-radius: 20%;
 }
 
-.signin-link:active{
+.sign-up-sign-in-link:active{
     color: white;
 }
 
-.alternatives{
+.sign-up-alternatives{
     font-size: .9rem;
     display: flex;
     justify-content: space-evenly;
