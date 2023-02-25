@@ -14,6 +14,7 @@ function App() {
     <Route path='/signup' element={ <SignUp/>}/>
     <Route path='/confirm' element={ <Confirmation/>}/>
     </Routes>
+    <h4>© 2023, Designed by Tahir Dibirov II</h4>
     </div>
   )
 }
