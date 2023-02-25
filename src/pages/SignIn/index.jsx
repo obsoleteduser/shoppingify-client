@@ -5,6 +5,7 @@ import './SignIn.css'
 export const SignIn = () => {
   return (
     <div className='sign-in-container'>
+        <h1 className='app-brand'>Shoppingify</h1>
         <h2 className='sign-in-title'>Sign In</h2>
         <label htmlFor="">Email</label>
         <input className='sign-in-email' type="email" name="" id="" placeholder='Email'/>

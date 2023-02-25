@@ -1,8 +1,22 @@
+@font-face{
+  src: url(./assets/fonts/BlantickScript-3zjoG.ttf);
+  font-family: shop;
+}
+
 .App{
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #F9A109;
+}
+
+.app-brand{
+  font-family: shop;
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
 }

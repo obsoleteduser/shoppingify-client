@@ -3,14 +3,13 @@
     flex-direction: column;
     justify-content: center;
     width: 25rem;
-    height: 70vh;
+    min-height: 70vh;
     overflow: hidden;
     padding: 1rem 2rem;
     gap: 1rem;
     border: unset;
     border-radius: 10px;
     background-color: white;
-    position: fixed;
 }
 
 .confirmation-description{
@@ -46,7 +45,7 @@
 
     .confirmation-container{
         width: 20rem;
-        height: 60vh;
+        min-height: 60vh;
     }
     
 }
