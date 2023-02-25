@@ -35,6 +35,8 @@
     padding: 1rem;
     text-align: center;
     outline: unset;
+    border: 1px solid lightgray;
+    border-radius: 10px;
 }
 
 
