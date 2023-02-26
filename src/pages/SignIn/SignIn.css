@@ -27,7 +27,7 @@
 
 .sign-in-email, .sign-in-password::placeholder{
     font-weight: 300;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 .sign-in-btn{
