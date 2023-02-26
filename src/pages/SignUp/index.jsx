@@ -6,11 +6,8 @@ export const SignUp = () => {
   return (
     <div className='sign-up-container'>
       <h1 className='app-brand'>Shoppingify</h1>
-        <label htmlFor="">Email</label>
         <input className='sign-up-email' type="email" name="" id="" placeholder='Email'/>
-        <label htmlFor="">Password</label>
         <input className='sign-up-password' type="password" placeholder='Password'/>
-        <label htmlFor="">Confirm Password</label>
         <input className='sign-up-password' type="password" placeholder='Password'/>
         <button className='sign-up-btn'>Sign Up</button>
         <div className='sign-up-alternatives'>

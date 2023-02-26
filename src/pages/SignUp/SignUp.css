@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 25rem;
-    min-height: 80vh;
+    width: 30rem;
+    min-height: 50vh;
     overflow: hidden;
     padding: 1rem 2rem;
     gap: .5rem;
@@ -53,14 +53,15 @@ h2{
 
 .sign-up-sign-in-link{
     text-decoration: none;
-    color: gray;
-    background-color: lightgrey;
-    padding: 1rem;
-    border-radius: 20%;
+    color: #F9A109;
+    padding: 3%;
+    border: 1px solid #F9A109;
+    border-radius: 10px;
 }
 
 .sign-up-sign-in-link:active{
     color: white;
+    background-color: #F9A109;
 }
 
 .sign-up-alternatives{
@@ -75,7 +76,7 @@ h2{
 
     .sign-up-container{
         width: 20rem;
-        min-height: 60vh;
+        min-height: 50vh;
     }
     
 }

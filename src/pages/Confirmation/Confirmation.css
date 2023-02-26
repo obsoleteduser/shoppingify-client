@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 25rem;
-    min-height: 70vh;
+    min-height: 50vh;
     overflow: hidden;
     padding: 1rem 2rem;
     gap: 1rem;
@@ -47,7 +47,7 @@
 
     .confirmation-container{
         width: 20rem;
-        min-height: 60vh;
+        min-height: 45vh;
     }
     
 }
