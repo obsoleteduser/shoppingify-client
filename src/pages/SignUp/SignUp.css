@@ -57,9 +57,10 @@ h2{
     padding: 3%;
     border: 1px solid #F9A109;
     border-radius: 10px;
+    transition: all 300ms linear;
 }
 
-.sign-up-sign-in-link:active{
+.sign-up-sign-in-link:hover{
     color: white;
     background-color: #F9A109;
 }
