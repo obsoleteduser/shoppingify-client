@@ -49,10 +49,16 @@
 .links{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     width: 100%;
     text-decoration: none;
     color: black;
+}
+
+.link{
+    width: 100%;
+    text-align: center;
 }
 
 .link-icon{
