@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
-const useTitle = (_title) =>{
+const useTitle = (_title, someDependencies) =>{
     const [title, setTitle] = useState()
-    useEffect(()=>{setTitle(_title)}, [])
+    useEffect(()=>{setTitle(_title)}, someDependencies)
     document.title = title
 }
 
