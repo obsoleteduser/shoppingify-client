@@ -25,7 +25,7 @@ export const Navbar = () => {
             </div>
             <div className="cart-container">
            <span style={{margin: '.4rem'}}> <Cart className="cart"></Cart></span>
-            <span className='products-number'> {0}</span>
+            <span className='products-number'> {5}</span>
             </div>
         </div>
     )
