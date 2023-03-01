@@ -4,18 +4,24 @@ import './Navbar.css'
 
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { ReactComponent as Cart } from '../../assets/cart.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ReactComponent as Menu } from '../../assets/menu.svg'
+import { ReactComponent as History } from '../../assets/history.svg'
+import { ReactComponent as Statistics } from '../../assets/statistics.svg'
 
 export const Navbar = () => {
     return (
         <div className='Navbar'>
-            <Logo></Logo>
+            <Logo className="logo"></Logo>
             <div className="links">
-            <FontAwesomeIcon icon={["fal", "coffee"]} />
-        
-                <NavLink className='link' to="/dashboard/">Products</NavLink>
-                <NavLink className='link' to="/dashboard/history">History</NavLink>
-                <NavLink className='link' to="/dashboard/statistics">Statistics</NavLink>
+                <NavLink className='link menu' to="/dashboard/">
+                    <Menu className="link-icon"/>
+                </NavLink>
+                <NavLink className='link history' to="/dashboard/history">
+                    <History className="link-icon"/>
+                    </NavLink>
+                <NavLink className='link statistics' to="/dashboard/statistics">
+                    <Statistics className="link-icon"/>
+                    </NavLink>
             </div>
             <Cart className="cart"></Cart>
         </div>
