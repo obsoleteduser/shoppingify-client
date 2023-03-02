@@ -1,6 +1,7 @@
 .dashboard{
     display: flex;
+    justify-content: space-between;
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(249, 249, 249);;
+    background-color: rgb(249, 249, 249);
 }

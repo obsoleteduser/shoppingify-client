@@ -1,0 +1,74 @@
+.ItemAdder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+}
+
+
+.list-container {
+    background-color: rgb(255, 240, 222);
+    height: 80%;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+.ItemAdder input {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    outline: unset;
+    border-right: unset;
+    border: 1px solid lightgray;
+}
+
+.ItemAdder .list-save-button {
+    padding: 1rem;
+    border: unset;
+    background-color: rgb(249, 161, 9);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-left: .2rem;
+}
+
+.add-item-bottle{
+    background-color: rgb(128, 72, 91);
+    padding: .5 rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-item-bottle > p{
+    color: white;
+    padding: 1rem;
+    margin-left: 2rem;
+    width: 15rem;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.add-item-bottle-wrapper{
+    padding: 1rem;
+}
+
+
+
+.bottle-logo{
+    z-index: 1;
+    position: absolute;
+}
+
+.add-item-btn{
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    background-color: white;
+    border: unset;
+}
