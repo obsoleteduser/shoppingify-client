@@ -1,0 +1,22 @@
+.search-box{
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    gap: 1rem;
+
+}
+
+.search-box > .search-input{
+    border: unset;
+    outline: unset;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.products-title{
+    width: 20rem;
+}

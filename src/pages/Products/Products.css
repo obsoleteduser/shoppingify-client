@@ -1,6 +1,13 @@
 .products-page{
     width: 60%;
     background-color: rgb(249, 249, 249);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 1rem;
+}
+
+.products-page > p{
+font-size: 1.3rem;    
 }
 
 
