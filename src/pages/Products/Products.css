@@ -2,3 +2,13 @@
     width: 65%;
     background-color: rebeccapurple;
 }
+
+
+@media screen and (max-width: 800px) {
+    .products-page{
+     
+     width: 20%;
+     height: 100vh;
+     
+    }
+   }

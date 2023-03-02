@@ -42,7 +42,6 @@
     border-radius: 30%;
     font-weight: 300;
     font-size: .7rem;
-    z-index: 1;
     position: absolute;
 }
 
@@ -71,3 +70,12 @@
     border-left: 10px solid rgb(249, 161, 9);
     border-radius: 10px;
 }
+
+@media screen and (max-width: 800px) {
+    .Navbar{
+     
+     width: 20%;
+     height: 100vh;
+     
+    }
+   }
