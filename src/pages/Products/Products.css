@@ -2,7 +2,8 @@
     background-color: rgb(249, 249, 249);
     display: flex;
     padding: 2rem 1rem;
-    overflow: scroll;
+    overflow-y: scroll;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 3rem;
@@ -20,10 +21,15 @@ font-size: 1.6rem;
 
 
 @media screen and (max-width: 800px) {
-    .products-page{
+    .products-header{
+    flex-direction: column;
      
-     width: 20%;
-     min-height: 100vh;
-     
+    }
+
+    .products-page p{
+        width: 15.5rem;
+        text-align: left;
+        word-break: break-all;
+        margin-bottom: 1rem;
     }
    }

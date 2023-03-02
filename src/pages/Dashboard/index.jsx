@@ -12,7 +12,7 @@ export const Dashboard = () => {
     <div className='dashboard'>
      <Navbar></Navbar>
         <Outlet></Outlet>
-     <ShopListMaker/>
+     {/* <ShopListMaker/> */}
     </div>
   )
 }

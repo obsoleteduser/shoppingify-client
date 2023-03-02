@@ -4,8 +4,10 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
     gap: 1rem;
 
 }
@@ -14,11 +16,26 @@
     border: unset;
     outline: unset;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 300;
-    
+    width: 12rem;
+    height: 2rem;
+}
+
+.search-icon{
+    width: 1.5rem;
 }
 
 .products-title{
     width: 20rem;
+}
+
+@media screen and (max-width: 800px) {
+
+
+    .search-box{
+        height: .5rem;
+        padding: 1.5rem 1rem;
+    }
+ 
 }

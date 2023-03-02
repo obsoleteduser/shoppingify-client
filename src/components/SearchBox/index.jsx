@@ -5,7 +5,7 @@ import { ReactComponent as SearchIcon } from '../../assets/magnifying-glass-soli
 export const SearchBox = () => {
   return (
     <div className='search-box'>
-        <SearchIcon style={{width: '1rem',}}/>
+        <SearchIcon className="search-icon"/>
         <input className='search-input' type="text" placeholder="Search item"/>
           
     </div>
