@@ -84,6 +84,10 @@
     right: 0;
    }
    .ItemAdder input {
-    margin-top: 3rem;
+    margin-top: 1rem;
+   }
+
+   .list-container{
+    height: 85%;
    }
   }
