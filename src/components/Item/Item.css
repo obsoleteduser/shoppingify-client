@@ -1,0 +1,29 @@
+.item{
+    border-radius: 10px;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1rem;
+    padding: 0;
+    padding-left: 1rem;
+}
+
+.item > .item-add{
+    background-color: white;
+    border: unset;
+    color: gray;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    height: 100%;
+}
+
+.item .item-add:hover{
+    background-color: orange;
+    color: white;
+}
