@@ -1,4 +1,8 @@
 .statistics-page{
     width: 100%;
     background-color: rgb(249, 249, 249);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 }
