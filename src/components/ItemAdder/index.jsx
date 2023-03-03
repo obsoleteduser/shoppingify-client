@@ -1,11 +1,8 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import './ItemAdder.css'
 
 export const ItemAdd = () => {
 
-    const product = useSelector(state => state.itemAddReducer)
-    console.log(product);
 
 
     return (
