@@ -4,6 +4,10 @@
     gap: 1rem;
     background-color: white;
     padding: 1rem 2rem;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    width: 80%;
 }
 
 
@@ -28,10 +32,12 @@ input{
 .select-category::-webkit-scrollbar-thumb{
     background-color: rgb(249, 161, 9);
     border-radius: 10px;
+    
 }
 
 .select-category::-webkit-scrollbar{
     background-color: white;
+    width: 8px;
 }
 
 .data-option{
@@ -42,4 +48,24 @@ input{
 
 .data-option:hover{
     background-color: grey;
+}
+
+.add-controller{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.add-cancel{
+    padding: 1rem;
+    border-radius: 10px;
+    border: unset;
+    cursor: pointer;
+}
+.add-save{
+    padding: 1rem;
+    border-radius: 10px;
+    border: unset;
+    background-color: rgb(249, 161, 9);
+    color: white;
+    cursor: pointer;
 }

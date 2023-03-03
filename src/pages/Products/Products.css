@@ -20,6 +20,18 @@ font-size: 1.6rem;
 }
 
 
+
+.products-page::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.products-page::-webkit-scrollbar{
+    background-color: white;
+}
+
+
+
 @media screen and (max-width: 800px) {
     .products-header{
     flex-direction: column;
