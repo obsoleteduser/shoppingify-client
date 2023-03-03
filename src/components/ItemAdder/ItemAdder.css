@@ -1,0 +1,45 @@
+.AddItem{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+
+input{
+    padding: 1rem;
+    outline: unset;
+    border: 1px solid gray;
+    border-radius: 10px;
+}   
+
+
+
+.select-category{
+    padding: 0;
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: 10rem;
+    scrollbar-color: rgb(249, 161, 9) white;
+    overflow-y: scroll;
+}
+
+.select-category::-webkit-scrollbar-thumb{
+    background-color: rgb(249, 161, 9);
+    border-radius: 10px;
+}
+
+.select-category::-webkit-scrollbar{
+    background-color: white;
+}
+
+.data-option{
+    padding:  1rem;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.data-option:hover{
+    background-color: grey;
+}
