@@ -7,8 +7,15 @@ import { ReactComponent as Cart } from '../../assets/cart.svg'
 import { ReactComponent as Menu } from '../../assets/menu.svg'
 import { ReactComponent as History } from '../../assets/history.svg'
 import { ReactComponent as Statistics } from '../../assets/statistics.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { update } from '../../redux/slices/componentSlice'
+import useToggle from '../../hooks/useToggle'
+
 
 export const Navbar = () => {
+
+   const { toggleList } = useToggle()
+
     return (
         <div className='Navbar'>
             <Logo className="logo"></Logo>
@@ -23,7 +30,7 @@ export const Navbar = () => {
                     <Statistics className="link-icon"/>
                     </NavLink>
             </div>
-            <div className="cart-container">
+            <div onClick={toggleList} className="cart-container">
            <span style={{margin: '.4rem'}}> <Cart className="cart"></Cart></span>
             <span className='products-number'> {5}</span>
             </div>

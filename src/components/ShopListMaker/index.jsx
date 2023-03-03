@@ -1,8 +1,12 @@
 import React from 'react'
 import './ShopListMaker.css'
 import { ReactComponent as Bottle } from '../../assets/bottle.svg'
+import useToggle from '../../hooks/useToggle'
 
 export const ShopListMaker = () => {
+
+  const { toggleAdder, toggleList } = useToggle()
+
     return (
         <div className='ItemAdder'>
             <div className="list-container">
@@ -13,7 +17,10 @@ export const ShopListMaker = () => {
                     <p>
                     Didn’t find what you need?
                     </p>
-                    <button className='add-item-btn'>Add Item</button>
+                    <button onClick={()=>{
+                      toggleAdder()
+                    
+                    }} className='add-item-btn'>Add Item</button>
                     </div>
                 </div>
 
