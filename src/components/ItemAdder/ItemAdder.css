@@ -15,7 +15,6 @@ input{
     outline: unset;
     border: 1px solid gray;
     border-radius: 10px;
-    
 }   
 
 input:focus{
