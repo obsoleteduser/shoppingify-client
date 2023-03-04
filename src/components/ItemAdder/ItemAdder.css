@@ -6,15 +6,16 @@
     padding: 1rem 2rem;
     right: 0;
     height: 100%;
+    padding: 1rem 3.5rem;
 }
 
 
 input{
     padding: 1rem;
-    width: 18rem;
     outline: unset;
     border: 1px solid gray;
     border-radius: 10px;
+    
 }   
 
 input:focus{

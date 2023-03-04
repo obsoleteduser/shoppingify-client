@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 30%;
     height: 100%;
     background-color: white;
     right: 0;
@@ -26,6 +25,7 @@
     outline: unset;
     border-right: unset;
     border: 1px solid lightgray;
+    margin: 0;
 }
 
 .ItemAdder .list-save-button {
@@ -51,7 +51,7 @@
 
 .add-item-bottle > p{
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin-left: 2rem;
     width: 15rem;
     font-size: 1rem;
