@@ -9,16 +9,16 @@
     gap: 3rem;
 }
 
+
 .products-header{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .products-page p{
 font-size: 1.6rem;    
 }
-
 
 
 .products-page::-webkit-scrollbar-thumb{
@@ -45,3 +45,5 @@ font-size: 1.6rem;
         margin-bottom: 1rem;
     }
    }
+
+
