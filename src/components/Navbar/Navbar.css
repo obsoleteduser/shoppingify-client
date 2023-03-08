@@ -75,24 +75,25 @@
    padding: .5rem;
     z-index: 1;
     position: absolute;
-    left: 0;
-    top: 15%;
-    background-color: rgb(249, 161, 9);
+    left: 5%;
+    top: 5%;
+    background-color: white;
+    border: 1px solid gray;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: .5rem;
     border-radius: 10px;
+    font-size: .8rem;
 }
 
 .settings >p{
-    color: white;
+    color: black;
 }
 
 .log-out{
     padding: .5rem;
-    border: 1px solid red;
     color: red;
     font-weight: 500;
     border-radius: 10px;
