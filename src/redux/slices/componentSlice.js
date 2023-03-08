@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     details: false,
     itemAdder: false,
-    shopList: false
+    shopList: false,
+    menu: false
 }
 
 

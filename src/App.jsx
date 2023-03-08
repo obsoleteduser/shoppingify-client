@@ -1,4 +1,5 @@
-import { Route, Router, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Router, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import { RequireAuth } from './hoc/RequireAuth'
 import { Confirmation } from './pages/Confirmation'
@@ -11,6 +12,13 @@ import { Statistics } from './pages/Statistics'
 
 function App() {
 
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    
+    if(localStorage.getItem('token')) navigate('/dashboard')
+
+  },[])
 
   return (
     <div className="App">

@@ -7,6 +7,8 @@ const useToggle = ()=>{
     const dispatch = useDispatch()
     const shopList = useSelector(state => state.componentReducer.shopList)
     const itemAdder = useSelector(state => state.componentReducer.itemAdder)
+    const menu = useSelector(state => state.componentReducer.menu)
+
     const toggleList = () =>{
         dispatch(update({shopList:!shopList}))
         dispatch(update({itemAdder:false}))
@@ -19,8 +21,11 @@ const useToggle = ()=>{
         console.log(itemAdder)
     }
 
+    const toggleMenu = ()=>{
+        dispatch(update({menu: !menu}))
+    }
 
-    return {toggleList, toggleAdder}
+    return {toggleList, toggleAdder, toggleMenu}
 
 
 }

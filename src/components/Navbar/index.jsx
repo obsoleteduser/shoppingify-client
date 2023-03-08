@@ -10,15 +10,23 @@ import { ReactComponent as Statistics } from '../../assets/statistics.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { update } from '../../redux/slices/componentSlice'
 import useToggle from '../../hooks/useToggle'
+import useLogOut from '../../hooks/useLogOut'
 
 
 export const Navbar = () => {
 
-   const { toggleList } = useToggle()
+    const logOut = useLogOut()
+   const { toggleList, toggleMenu } = useToggle()
+   const menu = useSelector(state => state.componentReducer.menu)
+
 
     return (
         <div className='Navbar'>
-            <Logo className="logo"></Logo>
+            <Logo onClick={toggleMenu} className="logo"></Logo>
+          {menu &&   <div className="settings">
+                <p>Menu</p>
+                <span onClick={()=>{logOut()}} className='log-out'>Log Out</span>
+            </div> }
             <div className="links">
                 <NavLink className='link menu' to="/dashboard/">
                     <Menu className="link-icon"/>
