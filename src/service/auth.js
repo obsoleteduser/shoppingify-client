@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_API_URL = 'http://192.168.0.104:3000/auth/';
+const AUTH_API_URL = 'http://localhost:3000/auth/';
 
 
  const instance = axios.create({
@@ -20,5 +20,11 @@ export const auth = {
   signIn: async (data) =>{
     const response = await instance.post('signin', data)
     return response.data
+  },
+
+  confirm: async (data) =>{
+    const response = await instance.post('confirm', data)
+    return response.data
   }
+
 }
