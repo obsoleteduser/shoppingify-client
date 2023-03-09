@@ -10,6 +10,7 @@ import './SignIn.css'
 export const SignIn = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [error, setError] = useState()
 
   const schema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -37,7 +38,7 @@ export const SignIn = () => {
     navigate('/dashboard')
     }
     catch(error){
-      console.log(error.response.data)
+      setError(error.response.data.message)
     }
   }
 
@@ -54,6 +55,7 @@ export const SignIn = () => {
         {formik.touched.password && formik.errors.password ? (
         <div className='validation-error'>{formik.errors.password}</div>
       ) : null}
+       {error && (<div className='validation-error'>{error}</div>)}
         <button type='button' onClick={formik.handleSubmit} className='sign-in-btn'>Sign In</button>
         <div className='sign-in-alternatives'>
           <span className='sign-in-span'>Not registered yet?</span>

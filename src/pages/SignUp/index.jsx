@@ -73,8 +73,9 @@ export const SignUp = () => {
         {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
           <div className='validation-error'>{formik.errors.confirmPassword}</div>
         ) : null}
-        <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
         {error && (<div className='validation-error'>{error}</div>)}
+        <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
+        
         <div className='sign-up-alternatives'>
           <span className='sign-up-span'>Already have an account?</span>
           <Link className='sign-up-sign-in-link' to="/">Login</Link>
