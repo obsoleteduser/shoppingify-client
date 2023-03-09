@@ -42,9 +42,9 @@
 
 .validation-error{
     padding: .5rem;
-    background-color: red;
     border-radius: 5px;
-    color: white;
+    color: red;
+    letter-spacing: 0;
 }
 
 .validation-success{
