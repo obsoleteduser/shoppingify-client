@@ -6,12 +6,13 @@ import './SignUp.css'
 import { useFormik } from 'formik'
 
 export const SignUp = () => {
+  const [error, setError] = useState()
 
   const navigate = useNavigate()
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
-    password: Yup.string().required('Password is required').min(8, 'Password must be at least 5 characters'),
+    password: Yup.string().required('Password is required').min(8, 'Password must be at least 8 characters'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
       .required('Confirm Password is required'),
@@ -42,7 +43,7 @@ export const SignUp = () => {
       const response = await auth.signUp({ email, password })
       navigate('/confirm')
     } catch (err) {
-      console.log(err.message)
+        setError('User already existed')
     }
 
 
@@ -73,6 +74,7 @@ export const SignUp = () => {
           <div className='validation-error'>{formik.errors.confirmPassword}</div>
         ) : null}
         <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
+        {error && (<div className='validation-error'>{error}</div>)}
         <div className='sign-up-alternatives'>
           <span className='sign-up-span'>Already have an account?</span>
           <Link className='sign-up-sign-in-link' to="/">Login</Link>

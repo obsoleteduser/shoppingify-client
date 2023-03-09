@@ -7,6 +7,9 @@ import { useFormik } from 'formik'
 
 export const Confirmation = () => {
 
+  const [error, setError] = useState()
+  const [success, setSuccess] = useState()
+
 
   const confirmSchema = Yup.object().shape({
     code: Yup.number("The confirmation code must be a number").required("Enter a confirmation code")
@@ -25,10 +28,11 @@ export const Confirmation = () => {
     
     try{
       const { token } = await auth.confirm({verifyCode: code})
+      setSuccess('Successfully confirmed')
     localStorage.setItem('token', token)
     location.reload()
     }catch(err){
-      console.log(err.response)
+      setError(err.response.data.message)
     }
 
   }
@@ -42,6 +46,8 @@ export const Confirmation = () => {
         {formik.touched.code && formik.errors.code ? (
         <div className='validation-error'>{formik.errors.code}</div>
       ) : null}
+      {error && (<div className='validation-error'>{error}</div>)}
+      {success && (<div className='validation-success'>{success}</div>)}
         <button type='button' onClick={formik.handleSubmit} className="btn-confirm">Confirm</button>
     </div>
   )

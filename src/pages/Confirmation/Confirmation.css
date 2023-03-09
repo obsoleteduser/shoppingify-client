@@ -47,6 +47,13 @@
     color: white;
 }
 
+.validation-success{
+    padding: .5rem;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+}
+
 
 @media screen and (max-width: 480px) {
 
