@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_API_URL = 'http://localhost:3000/auth/';
+const AUTH_API_URL = 'https://shoppingify-server-by-tahir.onrender.com/auth/';
 
 
  const instance = axios.create({
