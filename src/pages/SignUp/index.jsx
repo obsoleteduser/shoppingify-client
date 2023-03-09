@@ -1,41 +1,51 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../service/auth'
+import * as Yup from 'yup'
 import './SignUp.css'
+import { useFormik } from 'formik'
 
 export const SignUp = () => {
-  
-  const [credentials, setCredentials] = useState({})
+
   const navigate = useNavigate()
 
-
-  const inputHandler = event =>{
-
-    setCredentials(prev => (
-      {
-        ...prev,
-        [event.target.name]: event.target.value
-      }
-    ))
-
-  }
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().required('Password is required').min(8, 'Password must be at least 5 characters'),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Confirm Password is required'),
+  });
 
 
-  const signUp = async ()=>{
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: values => {
+      signUp(values)
+    },
+  });
+  
 
-    const { email, password, confirm } = credentials
-    if(password===confirm){
+  
 
-     try{
-      const response = await auth.signUp({email, password})
-     navigate('/confirm')
-     }catch(err){
+
+  const signUp = async (values) => {
+
+    const { email, password } = values
+
+    try {
+      const response = await auth.signUp({ email, password })
+      navigate('/confirm')
+    } catch (err) {
       console.log(err.message)
-     }
-
-    }else{
-      alert("Fail")
     }
+
+
 
   }
 
@@ -44,10 +54,25 @@ export const SignUp = () => {
     <>
       <div className='sign-up-container'>
         <h1 className='app-brand'>Shoppingify</h1>
-        <input onChange={inputHandler} className='sign-up-email' type="email" name="email" id="" placeholder='Email' />
-        <input onChange={inputHandler} className='sign-up-password' type="password" name='password' placeholder='Password' />
-        <input onChange={inputHandler} className='sign-up-password' type="password" name='confirm' placeholder='Password' />
-        <button onClick={signUp} className='sign-up-btn'>Sign Up</button>
+        <input value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur} className='sign-up-email' type="email" name="email" id="" placeholder='Email' />
+        {formik.touched.email && formik.errors.email ? (
+          <div>{formik.errors.email}</div>
+        ) : null}
+        <input value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur} className='sign-up-password' type="password" name='password' placeholder='Password' />
+        {formik.touched.password && formik.errors.password ? (
+          <div>{formik.errors.password}</div>
+        ) : null}
+        <input value={formik.values.confirmPassword}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur} className='sign-up-password' type="password" name='confirmPassword' placeholder='Password' />
+        {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+          <div>{formik.errors.confirmPassword}</div>
+        ) : null}
+        <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
         <div className='sign-up-alternatives'>
           <span className='sign-up-span'>Already have an account?</span>
           <Link className='sign-up-sign-in-link' to="/">Login</Link>
