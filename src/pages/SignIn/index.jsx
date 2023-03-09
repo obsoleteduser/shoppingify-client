@@ -11,6 +11,7 @@ export const SignIn = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [error, setError] = useState()
+  const [loading, setLoading] = useState()
 
   const schema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -31,14 +32,16 @@ export const SignIn = () => {
  
   const signIn = async (values) =>{
     try{
+      setLoading(true)
       const {token} = await auth.signIn(values)
-    
+      setLoading(false)
     localStorage.setItem('token', token)
     dispatch(setAuth(token))
     navigate('/dashboard')
     }
     catch(error){
       setError(error.response.data.message)
+      setLoading(false)
     }
   }
 
@@ -56,7 +59,7 @@ export const SignIn = () => {
         <div className='validation-error'>{formik.errors.password}</div>
       ) : null}
        {error && (<div className='validation-error'>{error}</div>)}
-        <button type='button' onClick={formik.handleSubmit} className='sign-in-btn'>Sign In</button>
+        <button type='button' onClick={formik.handleSubmit} disabled={loading} style={loading ? {opacity: .5} : {}} className='sign-in-btn'>{loading ? 'Signing In...' :'Sign In'}</button>
         <div className='sign-in-alternatives'>
           <span className='sign-in-span'>Not registered yet?</span>
           <Link className='sign-in-sign-up-link' to="/signup">Sign Up</Link>

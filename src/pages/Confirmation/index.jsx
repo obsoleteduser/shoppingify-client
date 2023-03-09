@@ -9,6 +9,7 @@ export const Confirmation = () => {
 
   const [error, setError] = useState()
   const [success, setSuccess] = useState()
+  const [loading, setLoading] = useState(false)
 
 
   const confirmSchema = Yup.object().shape({
@@ -27,12 +28,15 @@ export const Confirmation = () => {
   const confirm = async (code)=>{
     
     try{
+      setLoading(true)
       const { token } = await auth.confirm({verifyCode: code})
+      setLoading(false)
       setSuccess('Successfully confirmed')
     localStorage.setItem('token', token)
     location.reload()
     }catch(err){
       setError(err.response.data.message)
+      setLoading(false)
     }
 
   }
@@ -48,7 +52,7 @@ export const Confirmation = () => {
       ) : null}
       {error && (<div className='validation-error'>{error}</div>)}
       {success && (<div className='validation-success'>{success}</div>)}
-        <button type='button' onClick={formik.handleSubmit} className="btn-confirm">Confirm</button>
+        <button type='button' onClick={formik.handleSubmit} style={loading ? {opacity: .5} : {}} className="btn-confirm">{loading ? 'Confirming...' : 'Confirm'}</button>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import { useFormik } from 'formik'
 
 export const SignUp = () => {
   const [error, setError] = useState()
+  const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
 
@@ -40,10 +41,13 @@ export const SignUp = () => {
     const { email, password } = values
 
     try {
+      setLoading(true)
       const response = await auth.signUp({ email, password })
+      setLoading(false)
       navigate('/confirm')
     } catch (err) {
         setError('User already existed')
+        setLoading(false)
     }
 
 
@@ -74,7 +78,7 @@ export const SignUp = () => {
           <div className='validation-error'>{formik.errors.confirmPassword}</div>
         ) : null}
         {error && (<div className='validation-error'>{error}</div>)}
-        <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
+        <button type="button" onClick={formik.handleSubmit} disabled={loading} style={loading ? {opacity: .5} : {}} className='sign-up-btn'>{loading ? 'Signing Up...'  : 'Sign Up'}</button>
         
         <div className='sign-up-alternatives'>
           <span className='sign-up-span'>Already have an account?</span>
