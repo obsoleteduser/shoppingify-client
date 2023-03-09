@@ -4,6 +4,7 @@ import { auth } from '../../service/auth'
 import * as Yup from 'yup'
 import './Confirmation.css'
 import { useFormik } from 'formik'
+import onEnter from '../../helpers/onEnter'
 
 export const Confirmation = () => {
 
@@ -43,7 +44,7 @@ export const Confirmation = () => {
 
 
   return (
-    <div onKeyDown={formik.handleSubmit} className='confirmation-container'>
+    <div onKeyDown={onEnter(formik.handleSubmit)} className='confirmation-container'>
         <h1 className='app-brand'>Shoppingify</h1>
         <p className='confirmation-description'>Please checkout your email address and enter the confirmation code</p>
         <input name="code" value={formik.values.code}  onChange={formik.handleChange} className='confirmation-number' autoFocus type="number" placeholder='Enter the validation number'/>
