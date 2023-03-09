@@ -6,6 +6,7 @@ import { auth } from '../../service/auth'
 import * as Yup from 'yup'
 import { useFormik } from 'formik';
 import './SignIn.css'
+import onEnter from '../../helpers/onEnter'
 
 export const SignIn = () => {
   const navigate = useNavigate()
@@ -26,9 +27,6 @@ export const SignIn = () => {
       signIn(values)
     },
   });
-
-  console.log(formik.touched.email)
-  console.log(formik.touched.password)
  
   const signIn = async (values) =>{
     try{
@@ -48,7 +46,7 @@ export const SignIn = () => {
 
   return (
     <>
-      <div className='sign-in-container'>
+      <div onKeyDown={onEnter(formik.handleSubmit)} className='sign-in-container'>
         <h1 className='app-brand'>Shoppingify</h1>
         <input  value={formik.values.email} onChange={formik.handleChange} className='sign-in-email' type="email" name="email" id="" placeholder='Email' />
         {formik.touched.email && formik.errors.email ? (

@@ -43,7 +43,7 @@ export const Confirmation = () => {
 
 
   return (
-    <div className='confirmation-container'>
+    <div onKeyDown={formik.handleSubmit} className='confirmation-container'>
         <h1 className='app-brand'>Shoppingify</h1>
         <p className='confirmation-description'>Please checkout your email address and enter the confirmation code</p>
         <input name="code" value={formik.values.code}  onChange={formik.handleChange} className='confirmation-number' autoFocus type="number" placeholder='Enter the validation number'/>

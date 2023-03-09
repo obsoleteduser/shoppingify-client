@@ -4,6 +4,7 @@ import { auth } from '../../service/auth'
 import * as Yup from 'yup'
 import './SignUp.css'
 import { useFormik } from 'formik'
+import onEnter from '../../helpers/onEnter'
 
 export const SignUp = () => {
   const [error, setError] = useState()
@@ -57,7 +58,7 @@ export const SignUp = () => {
 
   return (
     <>
-      <div className='sign-up-container'>
+      <div onKeyDown={onEnter(formik.handleSubmit)} className='sign-up-container'>
         <h1 className='app-brand'>Shoppingify</h1>
         <input value={formik.values.email}
           onChange={formik.handleChange}
