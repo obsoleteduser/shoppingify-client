@@ -13,11 +13,7 @@ html {
   user-select: none;
 }
 
-#root{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 
 @keyframes fade-in {

@@ -40,7 +40,12 @@
 }
 
 
-
+.validation-error{
+    padding: .5rem;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
 
 
 @media screen and (max-width: 480px) {

@@ -11,11 +11,6 @@ export const SignIn = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  // const [credentials, setCredentials] = useState({
-  //   email: "dibirovtahir@gmail.com",
-  //   password: "12345"
-  // })
-
   const schema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().min(8, 'Password must be at least 8 characters').required('Required'),
@@ -46,13 +41,6 @@ export const SignIn = () => {
     }
   }
 
-  // const inputHandler  = event => {
-  //     setCredentials(prev => ({...prev,
-  //       [event.target.name]: event.target.value 
-  //     }))
-  // }
-
-
 
   return (
     <>
@@ -60,11 +48,11 @@ export const SignIn = () => {
         <h1 className='app-brand'>Shoppingify</h1>
         <input  value={formik.values.email} onChange={formik.handleChange} className='sign-in-email' type="email" name="email" id="" placeholder='Email' />
         {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
+        <div className='validation-error'>{formik.errors.email}</div>
       ) : null}
         <input value={formik.values.password} onChange={formik.handleChange} className='sign-in-password' type="password" name="password" placeholder='Password' />
         {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
+        <div className='validation-error'>{formik.errors.password}</div>
       ) : null}
         <button type='button' onClick={formik.handleSubmit} className='sign-in-btn'>Sign In</button>
         <div className='sign-in-alternatives'>

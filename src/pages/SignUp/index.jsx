@@ -58,19 +58,19 @@ export const SignUp = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur} className='sign-up-email' type="email" name="email" id="" placeholder='Email' />
         {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
+          <div className='validation-error'>{formik.errors.email}</div>
         ) : null}
         <input value={formik.values.password}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur} className='sign-up-password' type="password" name='password' placeholder='Password' />
         {formik.touched.password && formik.errors.password ? (
-          <div>{formik.errors.password}</div>
+          <div className='validation-error'>{formik.errors.password}</div>
         ) : null}
         <input value={formik.values.confirmPassword}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur} className='sign-up-password' type="password" name='confirmPassword' placeholder='Password' />
         {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-          <div>{formik.errors.confirmPassword}</div>
+          <div className='validation-error'>{formik.errors.confirmPassword}</div>
         ) : null}
         <button type="button" onClick={formik.handleSubmit} disabled={formik.isSubmitting} className='sign-up-btn'>Sign Up</button>
         <div className='sign-up-alternatives'>
