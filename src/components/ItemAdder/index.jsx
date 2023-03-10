@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import onInput from '../../helpers/onInput'
 import { useSetProductMutation } from '../../redux/api/productApi'
+import useToggle from '../../hooks/useToggle'
 import './ItemAdder.css'
 
 export const ItemAdd = () => {
-
+    const { toggleAdder } = useToggle()
     const [productState, setProductState] = useState({})
 
     const [ setProduct ] = useSetProductMutation()
@@ -22,8 +23,8 @@ export const ItemAdd = () => {
             <input value={productState.category} name="category" onChange={onInput(setProductState)} type="text" placeholder='Enter a category or choose one below' />
 
             <div className="add-controller">
-            <button className='add-cancel'>Cancel</button>
-            <button onClick={()=>{setProduct(productState).then(()=>setProductState({}))}} className='add-save'>Save</button>
+            <button onClick={toggleAdder} className='add-cancel'>Cancel</button>
+            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''}))}} className='add-save'>Save</button>
             </div>
         </div>
     )
