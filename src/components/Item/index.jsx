@@ -1,10 +1,10 @@
 import React from 'react'
 import './Item.css'
 
-export const Item = () => {
+export const Item = ({name}) => {
   return (
     <div className='item'>
-        <span>Some Data</span>
+        <span>{name}</span>
         <button className='item-add'>+</button>
     </div>
   )

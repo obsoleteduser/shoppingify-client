@@ -13,13 +13,27 @@ export const productApi  = createApi({
   
       return headers
     },}),
+    tagTypes: ['Product'],
    
     endpoints: (build) => ({
       getProductcs: build.query({
         query: ()=> `products`,
-        onError: (error) => {
-          console.error('Error fetching products:', error)
-        }
+        providesTags: ['Product']
+      }),
+      setProduct: build.mutation({
+        query: (product) => ({
+          url: 'products',
+          method: 'POST',
+          body: product
+        }),
+        invalidatesTags: ['Product'],
+      }),
+      deleteProduct: build.mutation({
+        query: (id) => ({
+          url: `products/${id}`,
+          method: 'DELETE',
+        }),
+        invalidatesTags: (result, error, id) => [{ type: 'Product', id }],
       })
     })
   })
@@ -29,4 +43,4 @@ export const productApi  = createApi({
   
 
 
-export const { useGetProductcsQuery } = productApi
+export const { useGetProductcsQuery, useSetProductMutation } = productApi
