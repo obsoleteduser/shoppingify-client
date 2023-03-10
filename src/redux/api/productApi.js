@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const productApi  = createApi({
     reducerPath: '',
-    baseQuery: fetchBaseQuery({baseUrl: 'http://shoppingify-server-by-tahir.onrender.com/user/'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'https://shoppingify-server-by-tahir.onrender.com/user/'}),
     prepareHeaders: (headers) => {
         
         const token = localStorage.getItem('token')
