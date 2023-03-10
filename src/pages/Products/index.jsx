@@ -3,9 +3,17 @@ import './Products.css'
 import useTitle from '../../hooks/useTitle'
 import { SearchBox } from '../../components/SearchBox'
 import { Item } from '../../components/Item'
+import { useGetProductcsQuery } from '../../redux/api/productApi'
 
 export const Products = () => {
   useTitle('Dashboard / Products', [])
+  const { data = [], error, isLoading} = useGetProductcsQuery()
+
+  if(isLoading){
+  
+     return <h1>Loading...</h1>
+  }
+
   return (
     <div className='products-page'>
      <div className="products-header">
@@ -14,51 +22,11 @@ export const Products = () => {
       </p>
       <SearchBox/>
      </div>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
-     <Item/>
+     {
+     Boolean(data) && data.map(data => (
+        <li>{data.name}</li>
+      ))
+     }
     </div>
   )
 }

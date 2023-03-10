@@ -17,6 +17,7 @@ function App() {
   useEffect(()=>{
     
     if(localStorage.getItem('token')) navigate('/dashboard')
+    console.log(localStorage.getItem('token'))
 
   },[])
 
