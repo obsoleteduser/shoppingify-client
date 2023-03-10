@@ -24,7 +24,7 @@ export const Products = () => {
      </div>
      {
      Boolean(data) && data.map(data => (
-        <li>{data.name}</li>
+        <li>{data.title}</li>
       ))
      }
     </div>
