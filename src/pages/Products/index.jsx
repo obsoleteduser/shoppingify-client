@@ -4,6 +4,7 @@ import useTitle from '../../hooks/useTitle'
 import { SearchBox } from '../../components/SearchBox'
 import { Item } from '../../components/Item'
 import { useGetProductcsQuery } from '../../redux/api/productApi'
+import axios from 'axios'
 
 export const Products = () => {
   useTitle('Dashboard / Products', [])
@@ -13,6 +14,19 @@ export const Products = () => {
   
      return <h1>Loading...</h1>
   }
+
+//   axios.get('http://localhost:3000/user/products', {
+//   headers: {
+//     Authorization: `Bearer ${localStorage.getItem('token')}`
+//   }
+// })
+//   .then(response => {
+//     console.log(response.data);
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
+
 
   return (
     <div className='products-page'>
