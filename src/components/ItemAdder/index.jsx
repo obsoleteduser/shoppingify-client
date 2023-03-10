@@ -21,12 +21,6 @@ export const ItemAdd = () => {
             <label htmlFor="">Category</label>
             <input value={productState.category} name="category" onChange={onInput(setProductState)} type="text" placeholder='Enter a category or choose one below' />
 
-            {/* <div className="select-category">
-                <div className='data-option'>Data 1</div>
-                <div className='data-option'>Data 2</div>
-                <div className='data-option'>Data 3</div>
-                <div className='data-option'>Data 4</div>
-            </div> */}
             <div className="add-controller">
             <button className='add-cancel'>Cancel</button>
             <button onClick={()=>{setProduct(productState).then(()=>setProductState({}))}} className='add-save'>Save</button>
