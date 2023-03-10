@@ -1,18 +1,20 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import getToken from '../../helpers/getToken'
 
 
 export const productApi  = createApi({
+    reducerPath: 'api',
     baseQuery: fetchBaseQuery({baseUrl: 'https://shoppingify-server-by-tahir.onrender.com/user',
     prepareHeaders: headers => {
      
   
-      const token = localStorage.getItem('token')
+      const token = getToken()
       
         headers.set('authorization', `Bearer ${token}`)
        
   
       return headers
-    },}),
+    }}),
     tagTypes: ['Product'],
    
     endpoints: (build) => ({
