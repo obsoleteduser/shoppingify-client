@@ -16,9 +16,7 @@ export const ShopListMaker = () => {
     const [list, setLocalList] = useState({})
     const { listName } = list
     const [ setList ] = useSetListMutation()
-    console.log(listState);
- 
-
+   
 
     return (
         <div className='ItemAdder'>
