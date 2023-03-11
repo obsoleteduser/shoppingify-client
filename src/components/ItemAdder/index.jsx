@@ -3,7 +3,6 @@ import onInput from '../../helpers/onInput'
 import { useSetProductMutation } from '../../redux/api/productApi'
 import useToggle from '../../hooks/useToggle'
 import './ItemAdder.css'
-import { useSelector } from 'react-redux'
 
 export const ItemAdd = () => {
     const { toggleAdder } = useToggle()
