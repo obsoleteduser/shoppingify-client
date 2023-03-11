@@ -33,11 +33,16 @@ const currentlistSlice = createSlice({
               state.products[productIndex].bought = status;
             }
             
-        }
+        },
+
+        getTotalQuantity: (state) => {
+            const totalQuantity = state.products.reduce((acc, curr) => acc + curr.quantity, 0);
+            return totalQuantity;
+          },
           
     }
    
 })
 
-export const {setCurrentList, setProduct, setProductStatus, setProductQuantity} = currentlistSlice.actions 
+export const {setCurrentList, setProduct, setProductStatus, setProductQuantity, getTotalQuantity} = currentlistSlice.actions 
 export default currentlistSlice.reducer
