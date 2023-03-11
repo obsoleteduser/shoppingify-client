@@ -18,7 +18,7 @@ function App() {
   const navigate = useNavigate()
 
 
-  useEffect(()=>{
+  useLayoutEffect(()=>{
     
     start(navigate)
 
