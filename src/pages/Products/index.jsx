@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Products.css'
 import useTitle from '../../hooks/useTitle'
 import { SearchBox } from '../../components/SearchBox'
-import { Item } from '../../components/Item'
+import  Item  from '../../components/Item'
 import { useGetProductcsQuery } from '../../redux/api/productApi'
 
 
@@ -28,7 +28,7 @@ export const Products = () => {
      </div>
      {
      Boolean(filteredData) && filteredData.map(product => (
-        <Item key={product._id} name={product.name}/>
+        <Item key={product._id} name={product.name} id={product._id}/>
       ))
      }
     </div>

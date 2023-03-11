@@ -8,7 +8,7 @@ export const ShopListMaker = () => {
 
   const { toggleAdder, toggleList } = useToggle()
   const products = useSelector(state => state.currentListReducer.products)
-  console.log(products)
+ 
 
     return (
         <div className='ItemAdder'>
@@ -32,8 +32,8 @@ export const ShopListMaker = () => {
                         {
                         products && products.map(product => (
                             <div key={product.id} className="must-by-product">
-                                <span>{product.name}</span>
-                                <input type="checkbox"/>
+                               <span>{product.name}</span>
+                               <span>{products.filter(item => item.id===product.id)[0].quantity}</span>
                             </div>
                         ))
                         }

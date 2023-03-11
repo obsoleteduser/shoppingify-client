@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+/* 
+
+Product Model -> {name: '', id: '', quantity: 0, bought: '', }
+
+*/
 
 const initialState = {
     listName: '',
-    products: [{name: '', id: '', quantity: 0, bought: '', }],
+    products: [],
     status: ''
 }
 
@@ -15,7 +20,20 @@ export const currentlistSlice = createSlice({
             return {...state, ...action.payload }
         },
         setProduct: (state, action) => {
-            state.products.push(action.payload)
+            
+
+            const exists = state.products.some(product => product.id === action.payload.id)
+            if(exists){
+                const { id } = action.payload;
+                const productIndex = state.products.findIndex(product => product.id === id);
+                if (productIndex !== -1) {
+                  state.products[productIndex].quantity += 1;
+                }
+            }else{
+                state.products.push(action.payload)
+            }
+            
+
         },
         setProductQuantity: (state, action) => {
             const { productId } = action.payload;
