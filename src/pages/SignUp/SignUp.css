@@ -27,7 +27,7 @@ h2{
 
 .sign-up-email, .sign-up-password::placeholder{
     font-weight: 300;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .sign-up-btn{

@@ -74,7 +74,7 @@ export const SignUp = () => {
         ) : null}
         <input value={formik.values.confirmPassword}
           onChange={formik.handleChange}
-          onBlur={formik.handleBlur} className='sign-up-password' type="password" name='confirmPassword' placeholder='Password' />
+          onBlur={formik.handleBlur} className='sign-up-password' type="password" name='confirmPassword' placeholder='Confirm password' />
         {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
           <div className='validation-error'>{formik.errors.confirmPassword}</div>
         ) : null}
