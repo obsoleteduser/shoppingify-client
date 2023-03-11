@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ShopListMaker.css'
 import { ReactComponent as Bottle } from '../../assets/bottle.svg'
 import useToggle from '../../hooks/useToggle'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import onInput from '../../helpers/onInput'
+import { setCurrentList } from '../../redux/slices/currentListSlice'
+import { useSetListMutation } from '../../redux/api/shopListApi'
 
 export const ShopListMaker = () => {
 
     const { toggleAdder, toggleList } = useToggle()
     const products = useSelector(state => state.currentListReducer.products)
+    const listState = useSelector(state => state.currentListReducer)
+    const dispatch = useDispatch()
+    const [list, setLocalList] = useState({})
+    const { listName } = list
+    const [ setList ] = useSetListMutation()
+    console.log(listState);
+ 
 
 
     return (
@@ -48,8 +58,8 @@ export const ShopListMaker = () => {
 
 
             <div className="list-name">
-                <input type="text" placeholder='Enter a name' />
-                <button className='list-save-button'>Save</button>
+                <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
+                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(listState)}} className='list-save-button'>Save</button>
             </div>
         </div>
     )

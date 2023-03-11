@@ -58,6 +58,9 @@ export const currentlistSlice = createSlice({
             return totalQuantity;
           },
           
+        setCurrentList: (state, action) => {
+          return action.payload
+        }
     }
    
 })

@@ -1,8 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import getToken from '../../helpers/getToken'
 
-const shopListApi = createApi({
-    reducerPath: 'api',
+export const shopListApi = createApi({
+    reducerPath: 'shoplistapi',
     baseQuery: fetchBaseQuery({baseUrl: 'https://shoppingify-server-by-tahir.onrender.com/user', 
     prepareHeaders: Headers => {
 
@@ -36,3 +36,6 @@ endpoints: (build) => ({
 })
 
 })
+
+
+export const { useSetListMutation, useGetListsQuery, useGetWaitingListQuery } = shopListApi;

@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
+    "react-spinners": "^0.13.8",
     "vite-plugin-react-svg": "^0.2.0",
     "vite-plugin-svgr": "^2.4.0",
     "yup": "^1.0.2"

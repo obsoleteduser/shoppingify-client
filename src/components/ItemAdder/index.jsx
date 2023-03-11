@@ -3,12 +3,14 @@ import onInput from '../../helpers/onInput'
 import { useSetProductMutation } from '../../redux/api/productApi'
 import useToggle from '../../hooks/useToggle'
 import './ItemAdder.css'
+import { useSelector } from 'react-redux'
 
 export const ItemAdd = () => {
     const { toggleAdder } = useToggle()
     const [productState, setProductState] = useState({})
-
     const [ setProduct ] = useSetProductMutation()
+
+  
 
     return (
         <div className="AddItem">
@@ -24,7 +26,7 @@ export const ItemAdd = () => {
 
             <div className="add-controller">
             <button onClick={toggleAdder} className='add-cancel'>Cancel</button>
-            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''}))}} className='add-save'>Save</button>
+            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''}));}} className='add-save'>Save</button>
             </div>
         </div>
     )

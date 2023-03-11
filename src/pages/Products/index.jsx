@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Products.css'
 import useTitle from '../../hooks/useTitle'
 import { SearchBox } from '../../components/SearchBox'
 import  Item  from '../../components/Item'
 import { useGetProductcsQuery } from '../../redux/api/productApi'
+import { PuffLoader } from 'react-spinners'
 
 
 export const Products = () => {
@@ -11,9 +12,10 @@ export const Products = () => {
   const [searchTerm, setSearchTerm] = useState({name: ''})
   const { data = [], error, isLoading} = useGetProductcsQuery()
 
+
   if(isLoading){
-  
-     return <h1>Loading...</h1>
+
+     return <div className='spinner'><PuffLoader color="orange" size={100}/></div>
   }
 
   const filteredData = data.filter(product => product.name.toUpperCase().includes(searchTerm.name.toUpperCase()))
