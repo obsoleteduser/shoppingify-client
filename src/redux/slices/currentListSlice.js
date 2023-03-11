@@ -38,3 +38,6 @@ const currentlistSlice = createSlice({
     }
    
 })
+
+export const {setCurrentList, setProduct, setProductStatus, setProductQuantity} = currentlistSlice.actions 
+export default currentlistSlice.reducer
