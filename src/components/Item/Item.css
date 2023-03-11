@@ -4,13 +4,14 @@
     height: fit-content;
     width: fit-content;
     display: flex;
+    width: 100%;
     gap: 1rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
     font-size: 1rem;
     padding: 0;
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 .item > .item-add{
@@ -18,8 +19,8 @@
     border: unset;
     color: gray;
     font-size: 1rem;
-    padding: 1rem;
     cursor: pointer;
+    padding: 1rem 2rem;
     height: 100%;
 }
 
