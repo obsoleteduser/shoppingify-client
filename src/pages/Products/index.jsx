@@ -27,12 +27,16 @@ export const Products = () => {
       <span className='shoppingify-orange' style={{color: 'rgb(249, 161, 9)', fontWeight: '500', fontSize: "1.6rem"}}>Shoppingify</span> allows you take your shopping list wherever you go
       </p>
       <SearchBox search={setSearchTerm}/>
-     </div>
-     {
+     </div >
+   
+   <div className="products-container">
+   {
      Boolean(filteredData) && filteredData.map(product => (
         <Item key={product._id} name={product.name} id={product._id}/>
       ))
      }
+   </div>
+   
     </div>
   )
 }
