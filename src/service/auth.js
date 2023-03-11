@@ -25,6 +25,12 @@ export const auth = {
   confirm: async (data) =>{
     const response = await instance.post('confirm', data)
     return response.data
+  },
+
+
+  wakeup: async () =>{
+    const response = await instance.get('wakeup')
   }
+
 
 }

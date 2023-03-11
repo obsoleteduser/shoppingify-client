@@ -1,6 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { Route, Router, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
+import getToken from './helpers/getToken'
 import { RequireAuth } from './hoc/RequireAuth'
 import { Confirmation } from './pages/Confirmation'
 import { Dashboard } from './pages/Dashboard'
@@ -9,17 +10,23 @@ import { Products } from './pages/Products'
 import { SignIn } from './pages/SignIn'
 import { SignUp } from './pages/SignUp'
 import { Statistics } from './pages/Statistics'
+import { auth } from './service/auth'
+import start from './service/start'
 
 function App() {
 
   const navigate = useNavigate()
 
+
   useEffect(()=>{
     
-    if(localStorage.getItem('token')) navigate('/dashboard')
-    console.log(localStorage.getItem('token'))
+    start(navigate)
 
   },[])
+
+
+  
+
 
   return (
     <div className="App">
