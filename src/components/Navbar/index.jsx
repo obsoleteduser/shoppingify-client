@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { update } from '../../redux/slices/componentSlice'
 import useToggle from '../../hooks/useToggle'
 import useLogOut from '../../hooks/useLogOut'
+import { getTotalQuantity } from '../../redux/slices/currentListSlice'
 
 
 export const Navbar = () => {
@@ -18,7 +19,8 @@ export const Navbar = () => {
     const logOut = useLogOut()
    const { toggleList, toggleMenu } = useToggle()
    const menu = useSelector(state => state.componentReducer.menu)
-
+   const totalQuantity = useSelector(state => state.currentListReducer.products).reduce((acc, curr) => acc + curr.quantity, 0);
+   
 
     return (
         <div className='Navbar'>
@@ -40,7 +42,7 @@ export const Navbar = () => {
             </div>
             <div onClick={toggleList} className="cart-container">
            <span style={{margin: '.4rem'}}> <Cart className="cart"></Cart></span>
-            <span className='products-number'> {5}</span>
+            {Boolean(totalQuantity) &&  <span className='products-number'>{totalQuantity}</span>}
             </div>
         </div>
     )
