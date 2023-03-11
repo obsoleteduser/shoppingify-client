@@ -18,6 +18,16 @@ export const ShopListMaker = () => {
     const [ setList ] = useSetListMutation()
    
 
+    console.log(listState)
+
+    const productsId = listState.products.map(productName => ({product: productName.id}))
+
+    const sendData = {
+        name: listName,
+        products: productsId,
+        status: 'waiting'
+    }
+
     return (
         <div className='ItemAdder'>
             <div className="list-container">
@@ -57,7 +67,7 @@ export const ShopListMaker = () => {
 
             <div className="list-name">
                 <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
-                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(listState)}} className='list-save-button'>Save</button>
+                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(sendData)}} className='list-save-button'>Save</button>
             </div>
         </div>
     )
