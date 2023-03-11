@@ -25,7 +25,7 @@ export const ItemAdd = () => {
 
             <div className="add-controller">
             <button onClick={toggleAdder} className='add-cancel'>Cancel</button>
-            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''}));}} className='add-save'>Save</button>
+            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''})); toggleAdder()}} className='add-save'>Save</button>
             </div>
         </div>
     )
