@@ -7,7 +7,7 @@ const initialState = {
     status: ''
 }
 
-const currentlistSlice = createSlice({
+export const currentlistSlice = createSlice({
     name: 'currentSlice',
     initialState,
     reducers:{

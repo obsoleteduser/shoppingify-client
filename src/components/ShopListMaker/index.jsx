@@ -2,10 +2,13 @@ import React from 'react'
 import './ShopListMaker.css'
 import { ReactComponent as Bottle } from '../../assets/bottle.svg'
 import useToggle from '../../hooks/useToggle'
+import { useSelector } from 'react-redux'
 
 export const ShopListMaker = () => {
 
   const { toggleAdder, toggleList } = useToggle()
+  const products = useSelector(state => state.currentListReducer.products)
+  console.log(products)
 
     return (
         <div className='ItemAdder'>
@@ -13,10 +16,11 @@ export const ShopListMaker = () => {
                 <div className="add-item-bottle-wrapper">
                 <Bottle className='bottle-logo'></Bottle>
                     <div className="add-item-bottle">
-                    
                     <p>
                     Didn’t find what you need?
                     </p>
+                    
+
                     <button onClick={()=>{
                       toggleAdder()
                     
@@ -24,7 +28,21 @@ export const ShopListMaker = () => {
                     </div>
                 </div>
 
+                <div className="must-buy-products">
+                        {
+                        products && products.map(product => (
+                            <div key={product.id} className="must-by-product">
+                                <span>{product.name}</span>
+                                <input type="checkbox"/>
+                            </div>
+                        ))
+                        }
+                    </div>
+
             </div>
+
+          
+
             <div className="list-name">
                 <input type="text" placeholder='Enter a name' />
                 <button className='list-save-button'>Save</button>
