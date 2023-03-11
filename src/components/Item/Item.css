@@ -25,6 +25,6 @@
 }
 
 .item .item-add:hover{
-    background-color: orange;
+    background-color: gray;
     color: white;
 }
