@@ -15,13 +15,13 @@ export const ShopListMaker = () => {
     const dispatch = useDispatch()
     const [list, setLocalList] = useState({})
     const { listName } = list
-    const [ setList ] = useSetListMutation()
+    const [setList] = useSetListMutation()
     const { data } = useGetWaitingListQuery()
-   
+
     console.log('This is waiting list: ', data?.products)
 
 
-    const productsId = listState?.products?.map(productName => ({product: productName.id, quantity: productName.quantity, bought: productName.bought}))
+    const productsId = listState?.products?.map(productName => ({ product: productName.id, quantity: productName.quantity, bought: productName.bought }))
 
     const sendData = {
         name: listName,
@@ -35,21 +35,21 @@ export const ShopListMaker = () => {
                 <div className="add-item-bottle-wrapper">
                     <div className="add-item-bottle">
 
-                    <Bottle className='bottle-logo'></Bottle>
+                        <Bottle className='bottle-logo'></Bottle>
 
-                       <div className="text-n-bottle">
-                        <p>
-                            Didn’t find what you need?
-                        </p>
-                        <button onClick={() => {
-                            toggleAdder()
+                        <div className="text-n-bottle">
+                            <p>
+                                Didn’t find what you need?
+                            </p>
+                            <button onClick={() => {
+                                toggleAdder()
 
-                        }} className='add-item-btn'>Add Item</button>
-                       </div>
+                            }} className='add-item-btn'>Add Item</button>
+                        </div>
 
 
 
-                      
+
                     </div>
                 </div>
 
@@ -61,14 +61,14 @@ export const ShopListMaker = () => {
                                 <span className='product-name'>{product.name}</span>
                                 <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
                             </div>
-                        )): Boolean(data?.products?.length) && data?.products?.map(product => (
-                            
+                        )) : Boolean(data?.products?.length) && data?.products?.map(product => (
+
                             <div key={product.product.name} className="product-waitied must-buy-product">
-                               
+
 
                                 <input className="waited-check" type="checkbox" name="" />
-                                <span className="product-waited-name">
-                                {product.product.name}
+                                <span style={product.product.bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
+                                    {product.product.name}
                                 </span>
                                 <span className='product-quantity'>{data.products.filter(item => item.product.id === product.product.id)[0].quantity} pcs</span>
                             </div>
@@ -79,18 +79,22 @@ export const ShopListMaker = () => {
             </div>
 
 
-            { Boolean(products.length) ?(
-            <div className="list-name">
-                <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
-                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(sendData); dispatch(setCurrentList({   listName: '',
-    products: [],
-    status: ''}))}} className='list-save-button'>Save</button>
-            </div>
-    ) : Boolean(data?.products?.length) && (<div className='save-list-as'>
-        <button className="cancel">Cancel</button>
-        <button className="complete">Complete</button>
-    </div>)
-        }
+            {Boolean(products.length) ? (
+                <div className="list-name">
+                    <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
+                    <button onClick={() => {
+                        dispatch(setCurrentList({ ...listState, listName, status: 'waiting' })); setList(sendData); dispatch(setCurrentList({
+                            listName: '',
+                            products: [],
+                            status: ''
+                        }))
+                    }} className='list-save-button'>Save</button>
+                </div>
+            ) : Boolean(data?.products?.length) && (<div className='save-list-as'>
+                <button className="cancel">Cancel</button>
+                <button className="complete">Complete</button>
+            </div>)
+            }
         </div>
     )
 }

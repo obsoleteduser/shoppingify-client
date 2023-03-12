@@ -136,6 +136,9 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
+.bought{
+    text-decoration: line-through;
+}
 
 .must-buy-product{
     display: flex;
