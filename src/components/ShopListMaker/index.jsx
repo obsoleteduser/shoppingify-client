@@ -18,7 +18,7 @@ export const ShopListMaker = () => {
     const [ setList ] = useSetListMutation()
     const { data } = useGetWaitingListQuery()
    
-    console.log('This is waiting list: ', data)
+    console.log('This is waiting list: ', data?.products)
 
 
     const productsId = listState.products.map(productName => ({product: productName.id}))
