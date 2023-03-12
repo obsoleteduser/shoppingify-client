@@ -64,8 +64,9 @@ export const ShopListMaker = () => {
                         )): Boolean(data?.products?.length) && data?.products?.map(product => (
                             
                             <div key={product.product.name} className="product-waitied must-buy-product">
-    
-                                <input className="waited-check" type="checkbox" name="" id="" />
+                               
+
+                                <input className="waited-check" type="checkbox" name="" />
                                 <span className="product-waited-name">
                                 {product.product.name}
                                 </span>

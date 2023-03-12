@@ -86,10 +86,14 @@
     padding: 1rem;
 }
 
-.waited-check{
-    border: 1px solid rgb(249, 161, 9);
-    background-color: blue;
+
+
+input[type="checkbox"]{
+    display: inline;
+    padding: 1rem;
 }
+
+
 
 .add-item-btn{
     padding: 1rem;
@@ -115,6 +119,7 @@
 .must-buy-product{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .product-quantity{
