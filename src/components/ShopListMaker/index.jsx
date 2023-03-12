@@ -21,7 +21,7 @@ export const ShopListMaker = () => {
     console.log('This is waiting list: ', data?.products)
 
 
-    const productsId = listState.products.map(productName => ({product: productName.id, quantity: productName.quantity, bought: productName.bought}))
+    const productsId = listState?.products?.map(productName => ({product: productName.id, quantity: productName.quantity, bought: productName.bought}))
 
     const sendData = {
         name: listName,
@@ -56,7 +56,7 @@ export const ShopListMaker = () => {
                 <div className="must-buy-products">
                     <h2>The Shoplist you deserved</h2>
                     {
-                        Boolean(products.length) ? products.map(product => (
+                        Boolean(products?.length) ? products.map(product => (
                             <div key={product.id} className="must-buy-product">
                                 <span className='product-name'>{product.name}</span>
                                 <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
@@ -82,7 +82,9 @@ export const ShopListMaker = () => {
             { Boolean(products.length) ?(
             <div className="list-name">
                 <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
-                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(sendData)}} className='list-save-button'>Save</button>
+                <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(sendData); dispatch(setCurrentList({   listName: '',
+    products: [],
+    status: ''}))}} className='list-save-button'>Save</button>
             </div>
     ) : Boolean(data?.products?.length) && (<div className='save-list-as'>
         <button className="cancel">Cancel</button>
