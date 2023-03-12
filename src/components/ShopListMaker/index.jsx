@@ -21,7 +21,7 @@ export const ShopListMaker = () => {
     console.log('This is waiting list: ', data?.products)
 
 
-    const productsId = listState.products.map(productName => ({product: productName.id}))
+    const productsId = listState.products.map(productName => ({product: productName.id, quantity: productName.quantity, bought: productName.bought}))
 
     const sendData = {
         name: listName,
@@ -55,12 +55,21 @@ export const ShopListMaker = () => {
 
                 <div className="must-buy-products">
                     {
-                        products ? products.map(product => (
+                        Boolean(products.length) ? products.map(product => (
                             <div key={product.id} className="must-buy-product">
                                 <span className='product-name'>{product.name}</span>
                                 <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
                             </div>
-                        )): null
+                        )): Boolean(data?.products?.length) && data?.products?.map(product => (
+                            
+                            <div key={product.product.name} className="product-waitied must-buy-product">
+                                <input className="waited-check" type="checkbox" name="" id="" />
+                                <span className="product-waited-name">
+                                {product.product.name}
+                                </span>
+                                <span className='product-quantity'>{data.products.filter(item => item.product.id === product.product.id)[0].quantity} pcs</span>
+                            </div>
+                        ))
                     }
                 </div>
 

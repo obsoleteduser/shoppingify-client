@@ -86,6 +86,11 @@
     padding: 1rem;
 }
 
+.waited-check{
+    border: 1px solid rgb(249, 161, 9);
+    background-color: blue;
+}
+
 .add-item-btn{
     padding: 1rem;
     border-radius: 10px;
