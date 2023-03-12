@@ -5,7 +5,7 @@ import useToggle from '../../hooks/useToggle'
 import { useDispatch, useSelector } from 'react-redux'
 import onInput from '../../helpers/onInput'
 import { setCurrentList } from '../../redux/slices/currentListSlice'
-import { useSetListMutation } from '../../redux/api/shopListApi'
+import { useGetWaitingListQuery, useSetListMutation } from '../../redux/api/shopListApi'
 
 export const ShopListMaker = () => {
 
@@ -16,9 +16,10 @@ export const ShopListMaker = () => {
     const [list, setLocalList] = useState({})
     const { listName } = list
     const [ setList ] = useSetListMutation()
+    const { data } = useGetWaitingListQuery()
    
+    console.log('This is waiting list: ', data)
 
-    console.log(listState)
 
     const productsId = listState.products.map(productName => ({product: productName.id}))
 
@@ -34,30 +35,32 @@ export const ShopListMaker = () => {
                 <div className="add-item-bottle-wrapper">
                     <div className="add-item-bottle">
 
+                    <Bottle className='bottle-logo'></Bottle>
+
                        <div className="text-n-bottle">
-                       <Bottle className='bottle-logo'></Bottle>
                         <p>
                             Didn’t find what you need?
                         </p>
-                       </div>
-
-
-
                         <button onClick={() => {
                             toggleAdder()
 
                         }} className='add-item-btn'>Add Item</button>
+                       </div>
+
+
+
+                      
                     </div>
                 </div>
 
                 <div className="must-buy-products">
                     {
-                        products && products.map(product => (
+                        products ? products.map(product => (
                             <div key={product.id} className="must-buy-product">
                                 <span className='product-name'>{product.name}</span>
                                 <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
                             </div>
-                        ))
+                        )): null
                     }
                 </div>
 

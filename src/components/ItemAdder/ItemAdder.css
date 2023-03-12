@@ -1,6 +1,7 @@
 .AddItem{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     gap: 1rem;
     background-color: white;
     padding: 1rem 2rem;
