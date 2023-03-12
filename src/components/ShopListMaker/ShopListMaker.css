@@ -116,6 +116,27 @@ input[type="checkbox"]{
    
 }
 
+.save-list-as .complete{
+    background-color: rgb(69, 187, 225);
+    border-radius: 10px;
+    border: unset;
+    color: white;
+    margin: 1rem .1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.save-list-as .cancel{
+    background-color: gray;
+    border-radius: 10px;
+    margin: 1rem;
+    border: unset;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
 .must-buy-product{
     display: flex;
     justify-content: space-between;

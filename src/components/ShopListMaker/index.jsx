@@ -79,11 +79,16 @@ export const ShopListMaker = () => {
             </div>
 
 
-
+            { Boolean(products.length) ?(
             <div className="list-name">
                 <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
                 <button onClick={()=>{dispatch(setCurrentList({...listState, listName, status: 'waiting'})); setList(sendData)}} className='list-save-button'>Save</button>
             </div>
+    ) : Boolean(data?.products?.length) && (<div className='save-list-as'>
+        <button className="cancel">Cancel</button>
+        <button className="complete">Complete</button>
+    </div>)
+        }
         </div>
     )
 }
