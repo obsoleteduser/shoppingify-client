@@ -97,7 +97,7 @@ export const ShopListMaker = () => {
                 <div className="list-name">
                     <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
                     <button onClick={async () => { 
-                        dispatch(setCurrentList({ ...listState, listName, status: 'waiting' })); setList(sendData); dispatch(setCurrentList({
+                        dispatch(setCurrentList({ ...listState, listName, status: 'waiting' })); await setList(sendData); dispatch(setCurrentList({
                             listName: '',
                             products: [],
                             status: ''
