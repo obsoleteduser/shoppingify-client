@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect } from 'react'
 import { Route, Router, Routes, useNavigate } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import getToken from './helpers/getToken'
 import { RequireAuth } from './hoc/RequireAuth'
@@ -12,6 +13,7 @@ import { SignUp } from './pages/SignUp'
 import { Statistics } from './pages/Statistics'
 import { auth } from './service/auth'
 import start from './service/start'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer/>
       <Routes>
         <Route path='/' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />

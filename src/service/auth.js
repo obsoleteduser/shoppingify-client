@@ -29,7 +29,7 @@ export const auth = {
 
 
   wakeup: async () =>{
-    const response = await instance.get('wakeup')
+    const response = await instance.get('wakeups')
   }
 
 
