@@ -25,3 +25,13 @@
     color: gray;
     font-weight: 350;
 }
+
+
+@media screen and (max-width: 800px) {
+    .ShopListItem{
+     
+    flex-direction: column;
+    gap: 1rem;
+     
+    }
+   }
