@@ -1,7 +1,7 @@
 .ItemAdder {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
     background-color: white;
@@ -25,12 +25,10 @@
 
 .ItemAdder input {
     padding: 1rem;
-    margin-top: 1rem;
     border-radius: 10px;
     outline: unset;
     border-right: unset;
     border: 1px solid lightgray;
-    margin: 0;
 }
 
 .ItemAdder .list-save-button {
@@ -84,6 +82,8 @@
 .list-name{
     display: flex;
     padding: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -115,6 +115,8 @@ input[type="checkbox"]{
     padding: 0 1.5rem;
    
 }
+
+
 
 .save-list-as .complete{
     background-color: rgb(69, 187, 225);
@@ -159,9 +161,6 @@ input[type="checkbox"]{
     width: 80%;
     height: 100vh;
     right: 0;
-   }
-   .ItemAdder input {
-    margin-top: 1rem;
    }
 
    .list-container{
