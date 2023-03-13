@@ -3,12 +3,13 @@ import onInput from '../../helpers/onInput'
 import { useSetProductMutation } from '../../redux/api/productApi'
 import useToggle from '../../hooks/useToggle'
 import './ItemAdder.css'
+import { useNavigate } from 'react-router-dom'
 
 export const ItemAdd = () => {
     const { toggleAdder } = useToggle()
     const [productState, setProductState] = useState({})
     const [ setProduct ] = useSetProductMutation()
-
+    const navigate = useNavigate()
   
 
     return (
@@ -25,7 +26,7 @@ export const ItemAdd = () => {
 
             <div className="add-controller">
             <button onClick={toggleAdder} className='add-cancel'>Cancel</button>
-            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''})); toggleAdder()}} className='add-save'>Save</button>
+            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''})); navigate(''); toggleAdder()}} className='add-save'>Save</button>
             </div>
         </div>
     )

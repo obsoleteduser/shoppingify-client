@@ -39,7 +39,8 @@ endpoints: (build) => ({
             url: 'updatewaitinglist',
             method: 'PUT',
             body: list
-        })
+        }),
+        invalidatesTags: ['List'],
     }) 
 
 })
@@ -47,4 +48,4 @@ endpoints: (build) => ({
 })
 
 
-export const { useSetListMutation, useGetListsQuery, useGetWaitingListQuery } = shopListApi;
+export const { useSetListMutation, useGetListsQuery, useGetWaitingListQuery, useUpdateWaitingListMutation } = shopListApi;
