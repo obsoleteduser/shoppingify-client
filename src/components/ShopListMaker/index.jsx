@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import onInput from '../../helpers/onInput'
 import { setCurrentList } from '../../redux/slices/currentListSlice'
 import { useGetWaitingListQuery, useSetListMutation } from '../../redux/api/shopListApi'
-import { updateList } from '../../redux/slices/updatedListSlice'
+import { setbought, updateList } from '../../redux/slices/updatedListSlice'
 import extraDataService from '../../service/extraDataService'
 
 export const ShopListMaker = () => {
@@ -15,6 +15,8 @@ export const ShopListMaker = () => {
     const products = useSelector(state => state.currentListReducer.products)
     const listState = useSelector(state => state.currentListReducer)
     const savedNonUpdtaedList = useSelector(state => state.updateListReducer)
+    const boughtItems = useSelector(state => state.updateListReducer.products)
+    console.log("F**k No", boughtItems)
     const dispatch = useDispatch()
     const [list, setLocalList] = useState({})
     const { listName } = list
@@ -77,11 +79,11 @@ export const ShopListMaker = () => {
                             </div>
                         )) : Boolean(savedNonUpdtaedList?.products?.length) && savedNonUpdtaedList?.products?.map(product => (
 
-                            <div key={product?.product.name} className="product-waitied must-buy-product">
+                            <div key={product?.product._id} className="product-waitied must-buy-product">
 
 
-                                <input className="waited-check" type="checkbox" name="" />
-                                <span style={product.product.bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
+                                <input onChange={()=>{dispatch(setbought({id: product?.product._id, status: true}))}} className="waited-check" type="checkbox" name="" />
+                                <span style={ boughtItems.filter(item => item._id === product._id)[0].bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
                                     {product.product.name}
                                 </span>
                                 <span className='product-quantity'>{savedNonUpdtaedList.products.filter(item => item.product.id === product.product.id)[0].quantity} pcs</span>
