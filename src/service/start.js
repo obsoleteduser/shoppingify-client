@@ -19,7 +19,13 @@ const start = async (navigate) => {
       });
       }, 3000)
 
-     setTimeout(()=>{ location.reload()}, 6000)
+      setTimeout(()=>{
+        toast.error("Service periodically suspends when there no activity", {
+          position: toast.POSITION.TOP_RIGHT
+      });
+      }, 5000)
+
+     setTimeout(()=>{ location.reload()}, 10000)
     }    
   }
 
