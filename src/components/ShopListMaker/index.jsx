@@ -82,7 +82,7 @@ export const ShopListMaker = () => {
                             <div key={product?.product._id} className="product-waitied must-buy-product">
 
 
-                                <input onChange={()=>{dispatch(setbought({id: product?.product._id, status: true}))}} className="waited-check" type="checkbox" name="" />
+                                <input onChange={()=>{dispatch(setbought({id: product?.product._id, status: !boughtItems.filter(item => item._id === product._id)[0].bought}))}} className="waited-check" type="checkbox" name="" />
                                 <span style={ boughtItems.filter(item => item._id === product._id)[0].bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
                                     {product.product.name}
                                 </span>
