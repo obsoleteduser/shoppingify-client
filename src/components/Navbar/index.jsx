@@ -26,7 +26,7 @@ export const Navbar = () => {
         <div className='Navbar'>
             <Logo onClick={toggleMenu} className="logo"></Logo>
           {menu &&   <div className="settings">
-                <p>Menu</p>
+                <p onClick={()=>{toggleMenu(false)}}>Menu ✖</p>
                 <span onClick={()=>{logOut(); toggleMenu()}} className='log-out'>Log Out</span>
             </div> }
             <div className="links">

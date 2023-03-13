@@ -5,6 +5,7 @@ import { ItemAdd } from '../../components/ItemAdder'
 import { Layout } from '../../components/Layout'
 import { Navbar } from '../../components/Navbar'
 import { ShopListMaker } from '../../components/ShopListMaker'
+import useToggle from '../../hooks/useToggle'
 import { Products } from '../Products'
 import { Statistics } from '../Statistics'
 import './Dashboard.css'
@@ -12,6 +13,7 @@ import './Dashboard.css'
 export const Dashboard = () => {
 
   const componentState = useSelector(state => state.componentReducer)
+  const { toggleMenu } = useToggle()
 
   return (
     <div className='dashboard'>

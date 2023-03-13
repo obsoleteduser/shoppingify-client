@@ -21,8 +21,8 @@ const useToggle = ()=>{
         console.log(itemAdder)
     }
 
-    const toggleMenu = ()=>{
-        dispatch(update({menu: !menu}))
+    const toggleMenu = (arg = !menu)=>{
+        dispatch(update({menu: arg}))
     }
 
     return {toggleList, toggleAdder, toggleMenu}
