@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
+
 
 
 const initialState = {
@@ -8,3 +9,18 @@ const initialState = {
     status: ''
 
 }
+
+export const updatedListSlice = createSlice({
+    name: 'updatedList',
+    initialState,
+    reducers: {
+        updateList: (state, action) => {
+            state = action.payload
+            return state
+        }
+    }
+})
+
+
+export const { updateList } = updatedListSlice.actions
+export default updatedListSlice.reducer

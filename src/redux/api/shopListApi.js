@@ -32,7 +32,16 @@ endpoints: (build) => ({
     getWaitingList: build.query({
         query: () => 'shoplistwaiting',
         providesTags: ['List']
-    })
+    }),
+
+    updateWaitingList: build.mutation({
+        query: (list) => ({
+            url: 'updatewaitinglist',
+            method: 'PUT',
+            body: list
+        })
+    }) 
+
 })
 
 })
