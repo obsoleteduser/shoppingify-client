@@ -26,7 +26,8 @@ endpoints: (build) => ({
     }),
     getLists: build.query({
         query: ()=> 'shoplist',
-        providesTags: ['List']
+        providesTags: ['List'],
+        responseHandler: (response) => response.lists
     }),
 
     getWaitingList: build.query({

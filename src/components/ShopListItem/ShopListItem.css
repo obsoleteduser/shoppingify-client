@@ -3,5 +3,25 @@
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
+    justify-content: space-around;
+}
 
+
+.list-completed{
+    padding: .5rem;
+    border: 1px solid skyblue;
+    color: skyblue;
+    border-radius: 10px;
+}
+
+.list-canceled{
+    padding: .5rem;
+    border: 1px solid red;
+    color: red;
+    border-radius: 10px;
+}
+
+.list-item-date{
+    color: gray;
+    font-weight: 350;
 }
