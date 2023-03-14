@@ -46,7 +46,7 @@ export const ShopListMaker = () => {
     
 
 
-    if(completeClicks===2 || cancelClicks===2){ toggleList(); navigate('history'); setCancelClicks(0); setComplteClicks(0)}
+    if(completeClicks===2 || cancelClicks===2){ toggleList(); setCancelClicks(0); setComplteClicks(0);}
 
 
     const productsId = listState?.products?.map(productName => ({ product: productName.id, quantity: productName.quantity, bought: productName.bought }))
@@ -82,7 +82,7 @@ export const ShopListMaker = () => {
                 </div>
 
                 <div className="must-buy-products">
-                    <h2>The Shoplist you deserved</h2>
+                    <h2>The Shoplist you deserve</h2>
                     {
                         Boolean(products?.length) ? products.map(product => (
                             <div key={product.id} className="must-buy-product">
@@ -110,7 +110,7 @@ export const ShopListMaker = () => {
             {Boolean(products.length) ? (
                 <div className="list-name">
                     <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
-                    <button onClick={async () => { 
+                    <button onClick={async () => { navigate('history')
                         dispatch(setCurrentList({ ...listState, listName, status: 'waiting' })); await setList(sendData); dispatch(setCurrentList({
                             listName: '',
                             products: [],
