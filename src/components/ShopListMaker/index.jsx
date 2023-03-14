@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './ShopListMaker.css'
 import { ReactComponent as Bottle } from '../../assets/bottle.svg'
 import useToggle from '../../hooks/useToggle'
@@ -28,7 +28,8 @@ export const ShopListMaker = () => {
     const [setList] = useSetListMutation()
     const { data } = useGetWaitingListQuery()
     const [ updateWaitingList ] = useUpdateWaitingListMutation()
-   
+    const cancelRef = useRef()
+    const completeRef = useRef()
   
     useLayoutEffect(()=>{
        const loadAndCacheWaitingList = async ()=>{
@@ -119,8 +120,8 @@ export const ShopListMaker = () => {
                     }} className='list-save-button'>Save</button>
                 </div>
             ) : Boolean(savedNonUpdtaedList?.products?.length) && (<div className='save-list-as'>
-                <button  onClick={ async ()=>{  dispatch(setListStatus('canceled')); setCancelVerify(true); console.log('canc:', savedNonUpdtaedList); setCancelClicks(prev => prev + 1); await updateWaitingList(savedNonUpdtaedList) }} className="cancel">{cancelVerify ? 'Ok' : 'Cancel'}</button>
-                <button  onClick={async ()=>{ dispatch(setListStatus('completed')); setCompleteVerify(true); console.log('comp:', savedNonUpdtaedList); setComplteClicks(prev => prev +1 ); await updateWaitingList(savedNonUpdtaedList) }} className="complete">{completeVerify ? 'Ok': 'Complete'}</button>
+                <button ref={cancelRef} onClick={ async ()=>{completeRef.current.disabled=true; completeRef.current.style.opacity='0.4'; dispatch(setListStatus('canceled')); setCancelVerify(true); console.log('canc:', savedNonUpdtaedList); setCancelClicks(prev => prev + 1); await updateWaitingList(savedNonUpdtaedList) }} className="cancel">{cancelVerify ? 'Ok' : 'Cancel'}</button>
+                <button ref={completeRef} onClick={async ()=>{cancelRef.current.disabled=true; cancelRef.current.style.opacity='0.4'; dispatch(setListStatus('completed')); setCompleteVerify(true); console.log('comp:', savedNonUpdtaedList); setComplteClicks(prev => prev +1 ); await updateWaitingList(savedNonUpdtaedList) }} className="complete">{completeVerify ? 'Ok': 'Complete'}</button>
             </div>)
             }
         </div>

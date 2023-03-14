@@ -25,8 +25,8 @@ export const ItemAdd = () => {
             <input value={productState.category} name="category" onChange={onInput(setProductState)} type="text" placeholder='Enter a category or choose one below' />
 
             <div className="add-controller">
-            <button onClick={toggleAdder} className='add-cancel'>Cancel</button>
-            <button onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''})); navigate(''); toggleAdder()}} className='add-save'>Save</button>
+            <button ref={cancelRef} onClick={toggleAdder} className='add-cancel'>Cancel</button>
+            <button ref={completeRef} onClick={()=>{setProduct(productState).then(()=>setProductState({name: '', note: '', image: '', category: ''})); navigate(''); toggleAdder()}} className='add-save'>Save</button>
             </div>
         </div>
     )

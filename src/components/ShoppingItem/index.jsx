@@ -1,7 +1,7 @@
 import React from 'react'
 import './ShoppingItem.css'
 
-export const ShoppingItem = ({name, status, date}) => {
+export const ShoppingItem = () => {
   return (
     <div>index</div>
   )
