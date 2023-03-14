@@ -42,6 +42,9 @@ export const ShopListMaker = () => {
     }, [])
 
 
+    
+
+
     if(completeClicks===2 || cancelClicks===2){ toggleList(); navigate('history'); setCancelClicks(0); setComplteClicks(0)}
 
 

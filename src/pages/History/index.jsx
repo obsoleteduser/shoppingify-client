@@ -15,7 +15,7 @@ export const History = () => {
        
        {
         Boolean(data?.lists?.length) && data?.lists?.map(list => (
-          <ShopListItem name={list.name} date={list.createdAt} status={list.status}/>
+          <ShopListItem key={list._id} name={list.name} date={list.createdAt} status={list.status}/>
         ))
        }
       
