@@ -7,4 +7,9 @@ https://shoppingify-tahir.vercel.app
 ```yarn```
 ## Run in development mode
 ```yarn dev```
-
+# Used Stack of technologies on client side
+- React
+- Redux Toolkit
+- RTK Query
+- Yup
+- Formik
