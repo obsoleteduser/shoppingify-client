@@ -13,9 +13,9 @@ const Item = ({name, id, note, category, image}) => {
 
 
   return (
-    <div onClick={()=>{dispatch(setCurrentProduct({name, note, category, image})); dispatch(update({productDetails: true})) }} className='item'>
+    <div onClick={ event =>{ dispatch(setCurrentProduct({name, note, category, image})); dispatch(update({productDetails: true})) }} className='item'>
         <span>{name}</span>
-        <button style={active ? {backgroundColor: "orange", color: 'white'} : null} onClick={()=>{dispatch( setProduct({name, id, quantity: 1, bought: false})); setActive(true)}} className='item-add'>+</button>
+        <button style={active ? {backgroundColor: "orange", color: 'white'} : null} onClick={event=>{event.stopPropagation(); dispatch( setProduct({name, id, quantity: 1, bought: false})); setActive(true)}} className='item-add'>+</button>
     </div>
   )
 }
