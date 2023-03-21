@@ -10,7 +10,7 @@ export const ProductDetails = () => {
 
   return (
     <div className='product-details'>
-
+      <p className='back-button'>←back</p>
       { Boolean(image) && <img src={image} alt=""/> }
 
       <div className="text-details">

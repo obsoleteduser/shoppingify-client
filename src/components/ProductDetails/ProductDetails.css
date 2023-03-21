@@ -9,6 +9,16 @@
     background-color: white;
 }
 
+.back-button{
+    color: rgb(249, 161, 9);
+}
+
+.back-button:hover{
+    background-color: rgb(249, 161, 9);
+    color: white;
+    cursor: pointer;
+}
+
 .text-details{
     display: flex;
     flex-direction: column;
