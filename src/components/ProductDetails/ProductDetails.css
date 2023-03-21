@@ -11,6 +11,9 @@
 
 .back-button{
     color: rgb(249, 161, 9);
+    padding: .5rem 1rem;
+    width: fit-content;
+    border-radius: 10px;
 }
 
 .back-button:hover{

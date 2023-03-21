@@ -1,16 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { update } from '../../redux/slices/componentSlice'
 import './ProductDetails.css'
 
 export const ProductDetails = () => {
 
 
   const {name, image, category, note} = useSelector(state => state.currentProductReducer)
+  const dispatch = useDispatch()
 
 
   return (
     <div className='product-details'>
-      <p className='back-button'>←back</p>
+     <div style={{width: '100%'}} className="back">
+     <p onClick={()=>{ dispatch(update({productDetails: false})) }} className='back-button'>←back</p>
+     </div>
       { Boolean(image) && <img src={image} alt=""/> }
 
       <div className="text-details">
