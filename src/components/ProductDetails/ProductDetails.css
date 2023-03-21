@@ -39,3 +39,16 @@
     color: black;
     font-weight: 600;
 }
+
+@media screen and (max-width: 800px) {
+    .product-details{
+     position: absolute;
+     width: 80%;
+     height: 100vh;
+     right: 0;
+    }
+/*  
+    .list-container{
+     height: 85%;
+    } */
+   }
