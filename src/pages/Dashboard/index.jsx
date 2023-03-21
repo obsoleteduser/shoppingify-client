@@ -4,6 +4,7 @@ import { Outlet, Route, Routes } from 'react-router-dom'
 import { ItemAdd } from '../../components/ItemAdder'
 import { Layout } from '../../components/Layout'
 import { Navbar } from '../../components/Navbar'
+import { ProductDetails } from '../../components/ProductDetails'
 import { ShopListMaker } from '../../components/ShopListMaker'
 import useToggle from '../../hooks/useToggle'
 import { Products } from '../Products'
@@ -21,6 +22,7 @@ export const Dashboard = () => {
         <Outlet></Outlet>
      {componentState.itemAdder && <ItemAdd/> }
      {componentState.shopList && <ShopListMaker/> }
+     {componentState.productDetails && <ProductDetails/>}
     </div>
   )
 }

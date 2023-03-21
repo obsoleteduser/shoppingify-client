@@ -32,7 +32,7 @@ export const Products = () => {
    <div className="products-container">
    {
      Boolean(filteredData) && filteredData.map(product => (
-        <Item key={product._id} name={product.name} id={product._id}/>
+        <Item key={product._id} name={product?.name} id={product._id} note={product?.note} image={product.image} category={product.category}/>
       ))
      }
    </div>

@@ -5,7 +5,8 @@ const initialState = {
     details: false,
     itemAdder: false,
     shopList: false,
-    menu: false
+    menu: false,
+    productDetails: false,
 }
 
 
