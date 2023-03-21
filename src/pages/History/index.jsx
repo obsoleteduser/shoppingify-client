@@ -10,7 +10,7 @@ export const History = () => {
   console.log(data)
   return (
     <div className='history-page'>
-      <h1 className='history-title'>Shopping history</h1>
+      <h2 className='history-title'>Shopping history</h2>
       <div className="list-items">
        
        {

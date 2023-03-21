@@ -7,8 +7,8 @@ export const Statistics = () => {
   useTitle('Dashboard / Statistics', [])
   return (
     <div className='statistics-page'>
-      <h1>Statistics</h1>
-      <h2 style={{color: "red", fontWeight: 500}}>Sorry, statistics are currently unavailable</h2>
+      <h2 className='stats-title'>Statistics</h2>
+      <h4 className='stats-title' style={{color: "red", fontWeight: 500}}>Sorry, statistics are currently unavailable</h4>
       <div className="charts">
         <Charts/>
       </div>

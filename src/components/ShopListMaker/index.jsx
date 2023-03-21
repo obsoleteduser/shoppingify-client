@@ -82,7 +82,7 @@ export const ShopListMaker = () => {
                 </div>
 
                 <div className="must-buy-products">
-                    <h2>The Shoplist you deserve</h2>
+                    <h2>Shopping List</h2>
                     {
                         Boolean(products?.length) ? products.map(product => (
                             <div key={product.id} className="must-buy-product">

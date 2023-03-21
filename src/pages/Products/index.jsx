@@ -24,7 +24,7 @@ export const Products = () => {
     <div className='products-page'>
      <div className="products-header">
      <p className='products-title'>
-      <span className='shoppingify-orange' style={{color: 'rgb(249, 161, 9)', fontWeight: '500', fontSize: "1.6rem"}}>Shoppingify</span> allows you take your shopping list wherever you go
+      <span className='shoppingify-orange' style={{color: 'rgb(249, 161, 9)', fontWeight: '500', fontSize: "1.3rem"}}>Shoppingify</span> allows you take your shopping list wherever you go
       </p>
       <SearchBox search={setSearchTerm}/>
      </div >
