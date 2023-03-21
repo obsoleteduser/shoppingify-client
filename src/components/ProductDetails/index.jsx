@@ -13,7 +13,7 @@ export const ProductDetails = () => {
   return (
     <div className='product-details'>
      <div style={{width: '100%'}} className="back">
-     <p onClick={()=>{ dispatch(update({productDetails: false})) }} className='back-button'>←back</p>
+     <p onClick={()=>{ dispatch(update({productDetails: false})) }} className='back-button'>close</p>
      </div>
       { Boolean(image) && <img src={image} alt=""/> }
 
