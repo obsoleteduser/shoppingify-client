@@ -17,7 +17,9 @@ html {
   user-select: none;
 }
 
-
+#root{
+  height: 100vh;
+}
 
 
 @keyframes fade-in {

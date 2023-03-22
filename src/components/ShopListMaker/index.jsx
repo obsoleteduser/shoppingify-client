@@ -9,6 +9,7 @@ import { useGetWaitingListQuery, useSetListMutation, useUpdateWaitingListMutatio
 import { setbought, setListStatus, updateList } from '../../redux/slices/updatedListSlice'
 import extraDataService from '../../service/extraDataService'
 import { useNavigate } from 'react-router-dom'
+import { ReactComponent as ImageCart } from '../../assets/imagecart.svg'
 
 export const ShopListMaker = () => {
     const [cancelVerify, setCancelVerify] = useState(false)
@@ -89,7 +90,7 @@ export const ShopListMaker = () => {
                                 <span className='product-name'>{product.name}</span>
                                 <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
                             </div>
-                        )) : Boolean(savedNonUpdtaedList?.products?.length) && savedNonUpdtaedList?.products?.map(product => (
+                        )) : Boolean(savedNonUpdtaedList?.products?.length) ? savedNonUpdtaedList?.products?.map(product => (
 
                             <div key={product?.product._id} className="product-waitied must-buy-product">
 
@@ -100,7 +101,10 @@ export const ShopListMaker = () => {
                                 </span>
                                 <span className='product-quantity'>{savedNonUpdtaedList.products.filter(item => item.product.id === product.product.id)[0].quantity} pcs</span>
                             </div>
-                        ))
+                        )) : <div style={{display: 'flex', justifyContent: 'center', alignItems: "center", flexDirection: "column", gap: "1rem"}} className='empty-list'>
+                            <h3>Your list is empty</h3>
+                            <ImageCart className="imagecart"/>
+                        </div>
                     }
                 </div>
 

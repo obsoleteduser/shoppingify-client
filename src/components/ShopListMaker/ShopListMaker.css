@@ -105,6 +105,12 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
+.imagecart{
+    width: 15rem;
+    height: 15rem;
+    margin-right: 1rem;
+}
+
 .must-buy-products{
     display: flex;
     flex-direction: column;
