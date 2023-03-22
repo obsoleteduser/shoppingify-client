@@ -4,7 +4,7 @@ import getToken from '../../helpers/getToken'
 
 export const productApi  = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({baseUrl: 'https://shoppingify-server-by-tahir.onrender.com/user',
+    baseQuery: fetchBaseQuery({baseUrl: 'https://shoppingify-commercial.onrender.com/user',
     prepareHeaders: headers => {
      
   
