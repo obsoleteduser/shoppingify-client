@@ -47,7 +47,7 @@ export const SignUp = () => {
       setLoading(false)
       navigate('/confirm')
     } catch (err) {
-        setError('User already existed')
+        setError('User already exists')
         setLoading(false)
     }
 
