@@ -24,6 +24,13 @@
 }
 
 
+.products-title, .products-title > span{
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 1.5rem !important;
+    width: 25rem !important;
+}
+
 .spinner{
     width: 100%;
     height: 100%;
@@ -65,12 +72,16 @@ font-size: 1.1rem;
         flex-wrap: nowrap;
     }
 
-    .products-page p{
-        width: 15.5rem;
-        text-align: left;
-        word-break: break-all;
-        margin-bottom: 1rem;
+
+    .products-title, .products-title > span{
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 1.3rem !important;
+        width: 17rem !important;
+        padding-bottom: 1.5rem;
     }
+
+   
    }
 
 
