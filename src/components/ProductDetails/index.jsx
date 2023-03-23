@@ -1,14 +1,16 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useDeleteProductMutation } from '../../redux/api/productApi'
 import { update } from '../../redux/slices/componentSlice'
 import './ProductDetails.css'
 
 export const ProductDetails = () => {
 
 
-  const {name, image, category, note} = useSelector(state => state.currentProductReducer)
+  const {name, image, category, note, id} = useSelector(state => state.currentProductReducer)
   const dispatch = useDispatch()
 
+  const [ deleteProduct ] = useDeleteProductMutation()
 
   return (
     <div className='product-details'>
@@ -22,6 +24,11 @@ export const ProductDetails = () => {
     {   Boolean(category) && <div className="product-category"><span className='product-key'>category</span><span className='product-value'>{category}</span></div> }
      {  Boolean(note) && <div className="product-note"><span className='product-key'>note</span><span className='product-value'>{note}</span></div> }
 
+      </div>
+
+      <div className="product-controller">
+        <button className='product-delete' onClick={()=>{deleteProduct(id)}}>Delete</button>
+        <button className='product-add'>Add to list</button>
       </div>
 
     </div>

@@ -32,8 +32,9 @@ export const productApi  = createApi({
       }),
       deleteProduct: build.mutation({
         query: (id) => ({
-          url: `products/${id}`,
-          method: 'DELETE',
+          url: `products`,
+          method: 'POST',
+          body: id
         }),
         invalidatesTags: (result, error, id) => [{ type: 'Product', id }],
       })
@@ -45,4 +46,4 @@ export const productApi  = createApi({
   
 
 
-export const { useGetProductcsQuery, useSetProductMutation } = productApi
+export const { useGetProductcsQuery, useSetProductMutation, useDeleteProductMutation } = productApi
