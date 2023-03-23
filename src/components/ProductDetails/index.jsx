@@ -27,7 +27,7 @@ export const ProductDetails = () => {
       </div>
 
       <div className="product-controller">
-        <button className='product-delete' onClick={()=>{deleteProduct(id)}}>Delete</button>
+        <button className='product-delete' onClick={()=>{deleteProduct({id})}}>Delete</button>
         <button className='product-add'>Add to list</button>
       </div>
 
