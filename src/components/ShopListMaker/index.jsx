@@ -86,20 +86,20 @@ export const ShopListMaker = () => {
                     <h2>Shopping List</h2>
                     {
                         Boolean(products?.length) ? products.map(product => (
-                            <div key={product.id} className="must-buy-product">
-                                <span className='product-name'>{product.name}</span>
-                                <span className='product-quantity'>{products.filter(item => item.id === product.id)[0].quantity} pcs</span>
+                            <div key={product?.id} className="must-buy-product">
+                                <span className='product-name'>{product?.name}</span>
+                                <span className='product-quantity'>{products.filter(item => item?.id === product?.id)[0].quantity} pcs</span>
                             </div>
                         )) : Boolean(savedNonUpdtaedList?.products?.length) ? savedNonUpdtaedList?.products?.map(product => (
 
-                            <div key={product?.product._id} className="product-waitied must-buy-product">
+                            <div key={product?.product?._id} className="product-waitied must-buy-product">
 
 
-                                <input onChange={()=>{dispatch(setbought({id: product?.product._id, status: !boughtItems.filter(item => item._id === product._id)[0].bought}))}} className="waited-check" type="checkbox" name="" />
-                                <span style={ boughtItems.filter(item => item._id === product._id)[0].bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
-                                    {product.product.name}
+                                <input onChange={()=>{dispatch(setbought({id: product?.product?._id, status: !boughtItems.filter(item => item?._id === product?._id)[0].bought}))}} className="waited-check" type="checkbox" name="" />
+                                <span style={ boughtItems.filter(item => item?._id === product?._id)[0].bought ? {textDecoration: "line-through"}: null} className="product-waited-name ">
+                                    {product?.product?.name}
                                 </span>
-                                <span className='product-quantity'>{savedNonUpdtaedList.products.filter(item => item.product.id === product.product.id)[0].quantity} pcs</span>
+                                <span className='product-quantity'>{savedNonUpdtaedList?.products?.filter(item => item?.product?.id === product?.product?.id)[0].quantity} pcs</span>
                             </div>
                         )) : <div style={{display: 'flex', justifyContent: 'center', alignItems: "center", flexDirection: "column", gap: "1rem"}} className='empty-list'>
                             <h3>Your list is empty</h3>
