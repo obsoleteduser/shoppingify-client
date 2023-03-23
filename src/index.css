@@ -17,10 +17,14 @@ html {
   user-select: none;
 }
 
-
+body{
+  position: relative;
+}
 
 #root{
   height: 100vh;
+  position: sticky;
+  overflow: hidden;
 }
 
 
