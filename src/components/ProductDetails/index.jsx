@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useDeleteProductMutation } from '../../redux/api/productApi'
 import { update } from '../../redux/slices/componentSlice'
+import { setProduct } from '../../redux/slices/currentListSlice'
 import './ProductDetails.css'
 
 export const ProductDetails = () => {
@@ -28,7 +29,7 @@ export const ProductDetails = () => {
 
       <div className="product-controller">
         <button className='product-delete' onClick={()=>{deleteProduct({id}); dispatch(update({productDetails: false})) }}>Delete</button>
-        <button className='product-add'>Add to list</button>
+        <button className='product-add' onClick={()=>{dispatch( setProduct({name, id, quantity: 1, bought: false}));}}>Add to list</button>
       </div>
 
     </div>

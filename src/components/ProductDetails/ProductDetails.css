@@ -75,6 +75,13 @@
     cursor: pointer;
 }
 
+.product-controller > .product-add:active{
+    background-color: white;
+    color: rgb(249, 161, 9);
+    border: none;
+    cursor: pointer;
+}
+
 .product-controller > .product-delete{
     padding: 1rem;
     border-radius: 10px;
@@ -83,6 +90,13 @@
     font-weight: 600;
     background-color: gray;
     color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-controller > .product-delete:active{
+    background-color: white;
+    color: gray;
     border: none;
     cursor: pointer;
 }
