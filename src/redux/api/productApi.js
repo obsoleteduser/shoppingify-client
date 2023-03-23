@@ -36,7 +36,7 @@ export const productApi  = createApi({
           method: 'POST',
           body: id
         }),
-        invalidatesTags: (result, error, id) => [{ type: 'Product', id }],
+        invalidatesTags: ['Product'],
       })
     })
   })
