@@ -17,6 +17,8 @@ html {
   user-select: none;
 }
 
+
+
 #root{
   height: 100vh;
 }
@@ -30,3 +32,16 @@ html {
 * {
   animation: fade-in 500ms ease-in-out;
 }
+
+@media screen and (max-width: 800px) {
+
+  
+  * {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  *::-webkit-scrollbar { 
+    display: none;
+  }
+  
+  }
