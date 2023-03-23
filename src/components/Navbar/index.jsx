@@ -17,7 +17,7 @@ import { getTotalQuantity } from '../../redux/slices/currentListSlice'
 export const Navbar = () => {
 
     const logOut = useLogOut()
-   const { toggleList, toggleMenu } = useToggle()
+   const { toggleList, toggleMenu, toggleProductDetail } = useToggle()
    const menu = useSelector(state => state.componentReducer.menu)
    const totalQuantity = useSelector(state => state.currentListReducer.products).reduce((acc, curr) => acc + curr.quantity, 0);
    
@@ -40,7 +40,7 @@ export const Navbar = () => {
                     <Statistics className="link-icon"/>
                     </NavLink>
             </div>
-            <div onClick={toggleList} className="cart-container">
+            <div onClick={()=>{toggleList(); toggleProductDetail(false)}} className="cart-container">
            <span style={{margin: '.4rem'}}> <Cart className="cart"></Cart></span>
             {Boolean(totalQuantity) &&  <span className='products-number'>{totalQuantity}</span>}
             </div>
