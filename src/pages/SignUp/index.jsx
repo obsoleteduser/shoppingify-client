@@ -43,7 +43,7 @@ export const SignUp = () => {
 
     try {
       setLoading(true)
-      const response = await auth.signUp({ email, password })
+      const response = await auth.signUp({ email: email, password })
       setLoading(false)
       navigate('/confirm')
     } catch (err) {

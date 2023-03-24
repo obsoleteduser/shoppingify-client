@@ -31,7 +31,7 @@ export const SignIn = () => {
   const signIn = async (values) =>{
     try{
       setLoading(true)
-      const {token} = await auth.signIn(values)
+      const {token} = await auth.signIn({...values, email: values.email.toLowerCase()})
       setLoading(false)
     localStorage.setItem('token', token)
     dispatch(setAuth(token))
