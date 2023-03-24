@@ -113,7 +113,10 @@ export const ShopListMaker = () => {
 
             {Boolean(products.length) ? (
                 <div className="list-name">
+                    <label className="container-check">
                     <input onChange={onInput(setLocalList)} type="text" name="listName" placeholder='Enter a name' />
+                    <span class="checkmark"></span>
+                    </label>
                     <button onClick={async () => { navigate('history')
                         dispatch(setCurrentList({ ...listState, listName, status: 'waiting' })); await setList(sendData); dispatch(setCurrentList({
                             listName: '',

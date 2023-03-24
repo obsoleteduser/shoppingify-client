@@ -90,10 +90,10 @@
 
 
 
-input[type="checkbox"]{
+/* input[type="checkbox"]{
     display: inline;
     padding: 1rem;
-}
+} */
 
 
 
@@ -161,6 +161,10 @@ input[type="checkbox"]{
     border-radius: 15px;
     color: rgb(249, 161, 9);
 }
+
+
+
+
 
 @media screen and (max-width: 800px) {
    .ItemAdder{
