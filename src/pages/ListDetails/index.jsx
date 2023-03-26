@@ -8,7 +8,6 @@ export const ListDetails = () => {
 
  const list = useSelector(state => state.listDetailReducer)
  const navigate = useNavigate()
-  console.log(list?.data?.products)
 
   return (
     <div className='list-details'>
