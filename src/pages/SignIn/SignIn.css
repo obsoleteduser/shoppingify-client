@@ -73,7 +73,10 @@
     background-color: #F9A109;
 }
 
-
+.copy{
+    color: white;
+    font-weight: 200;
+}
 
 @media screen and (max-width: 480px) {
 

@@ -6,7 +6,7 @@ import { auth } from "./auth"
 const start = async (navigate) => {
     try{
       await auth.wakeup()
-      if(getToken()) navigate('/dashboard')
+      if(getToken()) navigate('/dashboard/')
     }catch(e){
         console.log(e)
         toast.error("Unable to connect to the service. Please stay with me I'm trying to reconnect!", {

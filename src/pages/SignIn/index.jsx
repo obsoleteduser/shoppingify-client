@@ -63,7 +63,7 @@ export const SignIn = () => {
           <Link className='sign-in-sign-up-link' to="/signup">Sign Up</Link>
         </div>
       </div>
-      <h4>© 2023, Designed by Tahir Dibirov II</h4>
+      <h4 className='copy'>© 2023, Designed by Tahir Dibirov II</h4>
     </>
   )
 }

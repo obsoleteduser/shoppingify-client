@@ -1,6 +1,7 @@
 .statistics-page{
     width: 100%;
     background-color: rgb(249, 249, 249);
+    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -10,3 +11,9 @@
     text-align: left;
     margin: 1rem;
 }
+
+h4{
+    color: black;
+    font-weight: 600;
+}
+

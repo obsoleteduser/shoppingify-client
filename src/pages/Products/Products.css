@@ -14,14 +14,15 @@
 
 .products-container{
     height: 80%;
-    overflow-y: scroll;
     overflow-x: hidden;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
     flex: 33.3%;
     padding: 1rem;
     gap: 2rem;
+    overflow-y: scroll !important;
 }
 
 

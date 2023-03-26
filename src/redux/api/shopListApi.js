@@ -42,11 +42,15 @@ endpoints: (build) => ({
             body: list
         }),
         invalidatesTags: ['List'],
-    }) 
+    }),
+
+    getTopProducts: build.query({
+        query: () => 'fullstatistics',
+    })
 
 })
 
 })
 
 
-export const { useSetListMutation, useGetListsQuery, useGetWaitingListQuery, useUpdateWaitingListMutation } = shopListApi;
+export const { useSetListMutation, useGetListsQuery, useGetWaitingListQuery, useUpdateWaitingListMutation, useGetTopProductsQuery } = shopListApi;

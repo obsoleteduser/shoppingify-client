@@ -28,6 +28,8 @@
     "react-router-dom": "^6.8.1",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.1",
+    "uid": "^2.0.1",
+    "uuid": "^9.0.0",
     "victory": "^36.6.8",
     "vite-plugin-react-svg": "^0.2.0",
     "vite-plugin-svgr": "^2.4.0",
