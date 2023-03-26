@@ -16,6 +16,9 @@
   overflow: hidden;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
 
 .app-brand{
   font-family: shop;
