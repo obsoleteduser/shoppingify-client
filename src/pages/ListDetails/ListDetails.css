@@ -25,3 +25,19 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+.back-btn{
+    background-color: transparent;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    width: fit-content;
+    border: unset;
+    border: 1px solid orange;
+    color: orange;
+}
+
+.back-btn:hover{
+    background-color: orange;
+    color: white;
+}
