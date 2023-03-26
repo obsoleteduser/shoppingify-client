@@ -23,6 +23,7 @@
 .list-details-items{
     display: flex;
     flex-wrap: wrap;
+    overflow-y: scroll;
     gap: 1rem;
 }
 
