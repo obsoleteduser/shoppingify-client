@@ -6,6 +6,7 @@ import componentReducer from "./slices/componentSlice";
 import currentListReducer from "./slices/currentListSlice";
 import updateListReducer from "./slices/updatedListSlice";
 import currentProductReducer from './slices/currentProductSlice'
+import listDetailReducer from './slices/listDetailSlice'
 
 export const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
       currentListReducer,
       updateListReducer,
       currentProductReducer,
+      listDetailReducer,
       [productApi.reducerPath]: productApi.reducer,
       [shopListApi.reducerPath]: shopListApi.reducer,
     },

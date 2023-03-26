@@ -14,6 +14,7 @@ import { Statistics } from './pages/Statistics'
 import { auth } from './service/auth'
 import start from './service/start'
 import 'react-toastify/dist/ReactToastify.css';
+import { ListDetails } from './pages/ListDetails'
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
             <Route index element={<Products />}></Route>
             <Route path='/dashboard/history' element={<History />}></Route>
             <Route path='/dashboard/statistics' element={<Statistics />}></Route>
+            <Route path='/dashboard/listdetails' element={<ListDetails/>}></Route>
           </Route>
         </Route>
       </Routes>
